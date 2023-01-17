@@ -12,11 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Provider().getATM { result in
-            print("Результат \(result[0].work_time)")
-        } failure: {
-            print("failure")
-        }
+        
     }
 }
 
