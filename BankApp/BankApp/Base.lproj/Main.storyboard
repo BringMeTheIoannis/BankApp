@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Profile-->
         <scene sceneID="f3f-fS-wh7">
             <objects>
                 <viewController id="9rD-sX-vpE" sceneMemberID="viewController">
@@ -18,23 +18,35 @@
                         <viewLayoutGuide key="safeArea" id="WOX-pV-ceo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" selectedImage="person" catalog="system" id="QP5-o0-tVy"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="QP5-o0-tVy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzq-3l-LyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-336" y="395"/>
         </scene>
-        <!--Item 1-->
+        <!--Maps-->
         <scene sceneID="bB8-OX-aVY">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="fBs-Mk-qs9" customClass="ViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9MS-GR-J4f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqC-EQ-iRI" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sIh-XW-Da9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sIh-XW-Da9" firstAttribute="bottom" secondItem="WqC-EQ-iRI" secondAttribute="bottom" id="N1D-ES-KlO"/>
+                            <constraint firstItem="WqC-EQ-iRI" firstAttribute="top" secondItem="sIh-XW-Da9" secondAttribute="top" id="OFO-WY-B3D"/>
+                            <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="WqC-EQ-iRI" secondAttribute="trailing" id="f3G-5t-eMj"/>
+                            <constraint firstItem="WqC-EQ-iRI" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="xSH-5I-uaz"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" selectedImage="mappin" catalog="system" id="F1w-A7-er0"/>
+                    <tabBarItem key="tabBarItem" title="Maps" image="mappin" catalog="system" id="F1w-A7-er0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WeJ-0S-bjk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,7 +73,7 @@
     </scenes>
     <resources>
         <image name="mappin" catalog="system" width="105" height="128"/>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
