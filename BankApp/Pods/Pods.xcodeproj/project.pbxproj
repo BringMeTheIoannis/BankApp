@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = GoogleMaps;
+			productName = GoogleMaps;
 		};
 /* End PBXAggregateTarget section */
 
@@ -269,7 +270,7 @@
 		9C025B9B34325EF615C95B9FEC338FE4 /* Concurrency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concurrency.swift; path = Source/Concurrency.swift; sourceTree = "<group>"; };
 		9C59444EBDC9D6DDAB33908DE4490B9B /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		9CD68C168A59504CA82BEA2C43276E08 /* Pods-BankApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BankApp-frameworks.sh"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FA6F5A29D44CCE9F1C51562AF0E7935 /* RequestTypeWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTypeWrapper.swift; path = Sources/Moya/RequestTypeWrapper.swift; sourceTree = "<group>"; };
 		A4D16CC6F3F5C370A4E1C54288AC2909 /* MultiTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiTarget.swift; path = Sources/Moya/MultiTarget.swift; sourceTree = "<group>"; };
 		AA420E41091782CD73ED720015F2B234 /* Moya-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Moya-umbrella.h"; sourceTree = "<group>"; };
@@ -418,7 +419,6 @@
 				534271412D94D7AD75B8756C0699511F /* URLTransform.swift */,
 				FF8F211ECAC8897F7252342424C1AD7C /* Support Files */,
 			);
-			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
@@ -554,7 +554,6 @@
 				2A5D6B132FE82A105914E9E57DCC8F0B /* Validation.swift */,
 				49B12659E3018C4F6C767448592A1471 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -580,7 +579,6 @@
 				64EB883219FA515968EFDAE6ADD0A1EE /* Core */,
 				C073A803ED9EC3E8E5CE4BF876F2A0AD /* Support Files */,
 			);
-			name = Moya;
 			path = Moya;
 			sourceTree = "<group>";
 		};
@@ -590,7 +588,6 @@
 				9B53CE42A191C7EE480833112F2253E5 /* Core */,
 				DE194BD6FE6ECE29589554529D73D3AF /* Support Files */,
 			);
-			name = "Moya-ObjectMapper";
 			path = "Moya-ObjectMapper";
 			sourceTree = "<group>";
 		};
@@ -660,7 +657,6 @@
 				0D591E972E51B594A16582735F27DBAA /* Maps */,
 				F95CA21588BAEF4CD71D83C8E288233B /* Support Files */,
 			);
-			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
