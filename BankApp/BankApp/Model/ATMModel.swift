@@ -14,6 +14,7 @@ class ATMModel: Mappable {
     var gps_x: String = ""
     var gps_y: String = ""
     var cash_in: String = ""
+    var city: String = ""
     
     required init?(map: Map) {
         mapping(map: map)
@@ -25,5 +26,6 @@ class ATMModel: Mappable {
         gps_x       <- map["gps_x"]
         gps_y       <- map["gps_y"]
         cash_in     <- map["cash_in"]
+        city        <- map["city"]
     }
 }

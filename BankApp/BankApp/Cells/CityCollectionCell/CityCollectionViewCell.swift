@@ -8,6 +8,7 @@
 import UIKit
 
 class CityCollectionViewCell: UICollectionViewCell {
+    static let id = String(describing: CityCollectionViewCell.self)
 
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var label: UILabel!
@@ -21,5 +22,7 @@ class CityCollectionViewCell: UICollectionViewCell {
         self.container.layer.cornerRadius = 15
         self.container.layer.borderWidth = 1.0
         self.container.layer.borderColor = UIColor.black.cgColor
+        self.container.layer.backgroundColor = self.isSelected ? UIColor.black.cgColor : UIColor.white.cgColor
+        self.label.textColor = self.isSelected ? UIColor.white : UIColor.black
     }
 }

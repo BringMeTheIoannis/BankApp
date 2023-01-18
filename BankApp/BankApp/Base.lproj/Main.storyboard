@@ -43,15 +43,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="cjj-qN-rm4"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vbt-en-p4N">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vbt-en-p4N">
                                     <size key="itemSize" width="171" height="47"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4GP-AQ-9TT">
-                                        <rect key="frame" x="0.0" y="0.0" width="171" height="47"/>
+                                        <rect key="frame" x="5" y="11.5" width="171" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mz1-w2-04Q">
                                             <rect key="frame" x="0.0" y="0.0" width="171" height="47"/>
@@ -103,7 +103,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Maps" image="mappin" catalog="system" id="F1w-A7-er0"/>
                     <connections>
+                        <outlet property="cityCollection" destination="xHt-bU-DOF" id="AJX-cF-8rl"/>
                         <outlet property="mapView" destination="WqC-EQ-iRI" id="X6n-9z-xjn"/>
+                        <outlet property="typeCollection" destination="vaq-N4-bEg" id="VHG-GC-dC9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WeJ-0S-bjk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
