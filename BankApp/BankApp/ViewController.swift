@@ -11,7 +11,9 @@ import GoogleMaps
 class ViewController: UIViewController {
     
     var arrayOfATMS = [ATMModel]()
+    var filteredArrayOfATMS = [ATMModel]()
     var arrayOfDepartments = [DepartmentModel]()
+    var filteredArrayOfDepartments = [DepartmentModel]()
     var cities = [String]()
     var selectedCity = IndexPath()
     var selectedType = IndexPath(item: 0, section: 0)

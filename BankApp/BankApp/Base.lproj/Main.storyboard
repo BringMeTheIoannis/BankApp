@@ -34,11 +34,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqC-EQ-iRI" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xHt-bU-DOF">
-                                <rect key="frame" x="0.0" y="673" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="672" width="414" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="cjj-qN-rm4"/>
@@ -62,7 +62,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaq-N4-bEg">
-                                <rect key="frame" x="0.0" y="743" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="742" width="414" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="eaz-gi-EAP"/>
@@ -85,18 +85,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwY-Xo-5AZ">
+                                <rect key="frame" x="0.0" y="812" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="LJ8-m7-bU7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sIh-XW-Da9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vaq-N4-bEg" firstAttribute="bottom" secondItem="sIh-XW-Da9" secondAttribute="bottom" id="0cI-bw-t54"/>
                             <constraint firstItem="vaq-N4-bEg" firstAttribute="top" secondItem="xHt-bU-DOF" secondAttribute="bottom" id="6TT-VA-rz1"/>
+                            <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="uwY-Xo-5AZ" secondAttribute="trailing" id="8ZE-E9-kjt"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="vaq-N4-bEg" secondAttribute="trailing" id="8ro-d0-8pd"/>
+                            <constraint firstItem="sIh-XW-Da9" firstAttribute="bottom" secondItem="uwY-Xo-5AZ" secondAttribute="bottom" id="ARd-ZU-wFI"/>
                             <constraint firstItem="xHt-bU-DOF" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="IaC-fJ-NNs"/>
                             <constraint firstItem="WqC-EQ-iRI" firstAttribute="top" secondItem="9MS-GR-J4f" secondAttribute="top" id="OFO-WY-B3D"/>
+                            <constraint firstItem="uwY-Xo-5AZ" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="U7M-VI-cXG"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="xHt-bU-DOF" secondAttribute="trailing" id="YXA-oH-bmi"/>
                             <constraint firstItem="xHt-bU-DOF" firstAttribute="top" secondItem="WqC-EQ-iRI" secondAttribute="bottom" id="aqL-oj-ZYW"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="WqC-EQ-iRI" secondAttribute="trailing" id="f3G-5t-eMj"/>
+                            <constraint firstItem="uwY-Xo-5AZ" firstAttribute="top" secondItem="vaq-N4-bEg" secondAttribute="bottom" id="kj2-MC-rdO"/>
                             <constraint firstItem="WqC-EQ-iRI" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="xSH-5I-uaz"/>
                             <constraint firstItem="vaq-N4-bEg" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="zuZ-jC-ya4"/>
                         </constraints>
@@ -136,6 +146,9 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
