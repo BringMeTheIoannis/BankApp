@@ -15,8 +15,10 @@ class ViewController: UIViewController {
     var arrayOfDepartments = [DepartmentModel]()
     var filteredArrayOfDepartments = [DepartmentModel]()
     var cities = [String]()
-    var selectedCity = IndexPath()
-    var selectedType = IndexPath(item: 0, section: 0)
+    var selectedCityIndexPath = IndexPath(item: 0, section: 0)
+    var selectedTypeIndexPath = IndexPath(item: 0, section: 0)
+    var selectedType: TypeOfDepartment = .atm
+    var selectedCity: String = ""
     var typesOfDeps = TypeOfDepartment.allCases
 
     @IBOutlet weak var mapView: GMSMapView!
@@ -51,8 +53,9 @@ class ViewController: UIViewController {
         Provider().getATM { [weak self] atms in
             guard let self = self else { return }
             self.arrayOfATMS = atms
+            self.filteredArrayOfATMS = atms
             self.makeUniqueCitiesArray(array: atms)
-            atms.forEach { atm in
+            self.filteredArrayOfATMS.forEach { atm in
                 self.drawMarker(lat: atm.gps_x, lon: atm.gps_y, color: .yellow)
             }
             self.cityCollection.reloadData()
@@ -65,6 +68,7 @@ class ViewController: UIViewController {
         Provider().getDepartments { [weak self] departments in
             guard let self = self else { return }
             self.arrayOfDepartments = departments
+            self.filteredArrayOfDepartments = departments
 //            departments.forEach { dep in
 //                self.drawMarker(lat: dep.gps_x, lon: dep.gps_y, color: .red)
 //            }
@@ -82,6 +86,7 @@ class ViewController: UIViewController {
                 return true
             }
         }
+        selectedCity = cities[0]
     }
     
     func drawMarker(lat: String, lon: String, color: UIColor) {
@@ -93,6 +98,22 @@ class ViewController: UIViewController {
         marker.map = self.mapView
     }
     
+    func drawMarkers(selectedType: TypeOfDepartment, selectedCity: String) {
+        mapView.clear()
+        switch selectedType {
+        case .atm:
+            filteredArrayOfATMS = arrayOfATMS.filter{ atm in
+                atm.city == selectedCity
+            }
+            filteredArrayOfATMS.forEach { atmFilt in
+                drawMarker(lat: atmFilt.gps_x, lon: atmFilt.gps_y, color: .green)
+            }
+        case .dep:
+            print("")
+        case .all:
+            print("")
+        }
+    }
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -111,14 +132,14 @@ extension ViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CityCollectionViewCell.id, for: indexPath)
         if collectionView == cityCollection {
             guard let cell = cell as? CityCollectionViewCell else { return cell }
-            cell.isSelected = selectedCity == indexPath
+            cell.isSelected = selectedCityIndexPath == indexPath
             cell.setup()
             cell.label.text = cities[indexPath.row]
             return cell
         }
         if collectionView == typeCollection {
             guard let cell = cell as? CityCollectionViewCell else { return cell}
-            cell.isSelected = selectedType == indexPath
+            cell.isSelected = selectedTypeIndexPath == indexPath
             cell.setup()
             cell.label.text = typesOfDeps[indexPath.row].rawValue
             return cell
@@ -130,11 +151,15 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == cityCollection {
-            selectedCity = indexPath
+            selectedCityIndexPath = indexPath
+            selectedCity = cities[indexPath.row]
+            drawMarkers(selectedType: selectedType, selectedCity: selectedCity)
             cityCollection.reloadData()
         }
         if collectionView == typeCollection {
-            selectedType = indexPath
+            selectedTypeIndexPath = indexPath
+            selectedType = typesOfDeps[indexPath.row]
+            drawMarkers(selectedType: selectedType, selectedCity: selectedCity)
             typeCollection.reloadData()
         }
     }
