@@ -34,10 +34,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqC-EQ-iRI" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="629"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xHt-bU-DOF">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xHt-bU-DOF">
                                 <rect key="frame" x="0.0" y="673" width="414" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -61,21 +61,21 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaq-N4-bEg">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaq-N4-bEg">
                                 <rect key="frame" x="0.0" y="743" width="414" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="eaz-gi-EAP"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Uzz-Hx-CN1">
-                                    <size key="itemSize" width="194" height="43"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HjT-wF-Jkj">
+                                    <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yu5-jt-xS3">
-                                        <rect key="frame" x="0.0" y="0.0" width="194" height="43"/>
+                                        <rect key="frame" x="0.0" y="13.5" width="194" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3ao-rZ-MV0">
                                             <rect key="frame" x="0.0" y="0.0" width="194" height="43"/>
@@ -93,7 +93,7 @@
                             <constraint firstItem="vaq-N4-bEg" firstAttribute="top" secondItem="xHt-bU-DOF" secondAttribute="bottom" id="6TT-VA-rz1"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="vaq-N4-bEg" secondAttribute="trailing" id="8ro-d0-8pd"/>
                             <constraint firstItem="xHt-bU-DOF" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="IaC-fJ-NNs"/>
-                            <constraint firstItem="WqC-EQ-iRI" firstAttribute="top" secondItem="sIh-XW-Da9" secondAttribute="top" id="OFO-WY-B3D"/>
+                            <constraint firstItem="WqC-EQ-iRI" firstAttribute="top" secondItem="9MS-GR-J4f" secondAttribute="top" id="OFO-WY-B3D"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="xHt-bU-DOF" secondAttribute="trailing" id="YXA-oH-bmi"/>
                             <constraint firstItem="xHt-bU-DOF" firstAttribute="top" secondItem="WqC-EQ-iRI" secondAttribute="bottom" id="aqL-oj-ZYW"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="WqC-EQ-iRI" secondAttribute="trailing" id="f3G-5t-eMj"/>

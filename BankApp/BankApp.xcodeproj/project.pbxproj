@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59125A182978341800DDBD91 /* TypeOfDepartmentEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59125A172978341800DDBD91 /* TypeOfDepartmentEnum.swift */; };
 		59C05018297701DF0045D6ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05017297701DF0045D6ED /* AppDelegate.swift */; };
 		59C0501A297701DF0045D6ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05019297701DF0045D6ED /* SceneDelegate.swift */; };
 		59C0501C297701DF0045D6ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0501B297701DF0045D6ED /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		397A0149D539F714628FE4E5 /* Pods_BankApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BankApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59125A172978341800DDBD91 /* TypeOfDepartmentEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfDepartmentEnum.swift; sourceTree = "<group>"; };
 		59C05014297701DF0045D6ED /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C05017297701DF0045D6ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C05019297701DF0045D6ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		59125A16297833F800DDBD91 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				59125A172978341800DDBD91 /* TypeOfDepartmentEnum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		59C0500B297701DF0045D6ED = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 		59C05016297701DF0045D6ED /* BankApp */ = {
 			isa = PBXGroup;
 			children = (
+				59125A16297833F800DDBD91 /* Enums */,
 				59C050362977FA310045D6ED /* Cells */,
 				59C05031297711940045D6ED /* API */,
 				59C05030297711840045D6ED /* Provider */,
@@ -283,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59125A182978341800DDBD91 /* TypeOfDepartmentEnum.swift in Sources */,
 				59C0502D29770F970045D6ED /* ATMModel.swift in Sources */,
 				59C0501C297701DF0045D6ED /* ViewController.swift in Sources */,
 				59C05035297713280045D6ED /* Provider.swift in Sources */,
