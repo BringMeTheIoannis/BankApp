@@ -18,8 +18,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initMap()
         getATMS()
         getDepartments()
+    }
+    
+    func initMap() {
+        let camera = GMSCameraPosition(latitude: 53.53, longitude: 27.34, zoom: 5)
+        mapView.camera = camera
     }
     
     func getATMS() {
