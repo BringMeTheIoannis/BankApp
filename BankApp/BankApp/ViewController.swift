@@ -10,10 +10,10 @@ import GoogleMaps
 
 class ViewController: UIViewController {
     
-    var arrayOfATMS = [ATMModel]()
-    var filteredArrayOfATMS = [ATMModel]()
-    var arrayOfDepartments = [DepartmentModel]()
-    var filteredArrayOfDepartments = [DepartmentModel]()
+    var arrayOfATMS = [Models]()
+    var filteredArrayOfATMS = [Models]()
+    var arrayOfDepartments = [Models]()
+    var filteredArrayOfDepartments = [Models]()
     var cities = [String]()
     var selectedCityIndexPath = IndexPath(item: 0, section: 0)
     var selectedTypeIndexPath = IndexPath(item: 0, section: 0)
@@ -55,9 +55,10 @@ class ViewController: UIViewController {
             self.arrayOfATMS = atms
             self.filteredArrayOfATMS = atms
             self.makeUniqueCitiesArray(array: atms)
-            self.filteredArrayOfATMS.forEach { atm in
-                self.drawMarker(lat: atm.gps_x, lon: atm.gps_y, color: .yellow)
-            }
+//            self.filteredArrayOfATMS.forEach { atm in
+//                self.drawMarker(lat: atm.gps_x, lon: atm.gps_y, color: .yellow)
+//            }
+            self.drawMarkers(selectedType: self.selectedType, selectedCity: self.selectedCity)
             self.cityCollection.reloadData()
         } failure: {
             print("Failure: GetATMS")
@@ -69,6 +70,7 @@ class ViewController: UIViewController {
             guard let self = self else { return }
             self.arrayOfDepartments = departments
             self.filteredArrayOfDepartments = departments
+            self.makeUniqueCitiesArray(array: departments)
 //            departments.forEach { dep in
 //                self.drawMarker(lat: dep.gps_x, lon: dep.gps_y, color: .red)
 //            }
@@ -78,15 +80,26 @@ class ViewController: UIViewController {
     }
     
     func makeUniqueCitiesArray(array: [ATMModel]) {
-        let _ = array.filter { city in
-            if cities.contains(city.city) {
+        let _ = array.filter { atmCity in
+            if cities.contains(atmCity.city) {
                 return false
             } else {
-                cities.append(city.city)
+                cities.append(atmCity.city)
                 return true
             }
         }
         selectedCity = cities[0]
+    }
+    
+    func makeUniqueCitiesArray(array: [DepartmentModel]) {
+        let _ = array.filter { depCity in
+            if cities.contains(depCity.city) {
+                return false
+            } else {
+                cities.append(depCity.city)
+                return true
+            }
+        }
     }
     
     func drawMarker(lat: String, lon: String, color: UIColor) {
@@ -98,20 +111,25 @@ class ViewController: UIViewController {
         marker.map = self.mapView
     }
     
+    func filterAndDraw(selectedCity: String, array: [Models], filteredArray: inout [Models], colorOfPin: UIColor) {
+        filteredArray = array.filter{ atm in
+            atm.city == selectedCity
+        }
+        filteredArray.forEach { atmFilt in
+            drawMarker(lat: atmFilt.lat, lon: atmFilt.lon, color: colorOfPin)
+        }
+    }
+    
     func drawMarkers(selectedType: TypeOfDepartment, selectedCity: String) {
         mapView.clear()
         switch selectedType {
         case .atm:
-            filteredArrayOfATMS = arrayOfATMS.filter{ atm in
-                atm.city == selectedCity
-            }
-            filteredArrayOfATMS.forEach { atmFilt in
-                drawMarker(lat: atmFilt.gps_x, lon: atmFilt.gps_y, color: .green)
-            }
+            filterAndDraw(selectedCity: selectedCity, array: arrayOfATMS, filteredArray: &filteredArrayOfATMS, colorOfPin: .green)
         case .dep:
-            print("")
+            filterAndDraw(selectedCity: selectedCity, array: arrayOfDepartments, filteredArray: &filteredArrayOfDepartments, colorOfPin: .systemYellow)
         case .all:
-            print("")
+            filterAndDraw(selectedCity: selectedCity, array: arrayOfATMS, filteredArray: &filteredArrayOfATMS, colorOfPin: .green)
+            filterAndDraw(selectedCity: selectedCity, array: arrayOfDepartments, filteredArray: &filteredArrayOfDepartments, colorOfPin: .systemYellow)
         }
     }
 }
