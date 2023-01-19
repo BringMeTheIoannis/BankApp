@@ -9,13 +9,13 @@ import Foundation
 import ObjectMapper
 
 
-class DepartmentModel: Mappable {
+class DepartmentModel: Mappable, Models {
     
     
     var department: String = ""
     var city: String = ""
-    var gps_x: String = ""
-    var gps_y: String = ""
+    var lat: String = ""
+    var lon: String = ""
     
     
     required init?(map: Map) {
@@ -25,7 +25,7 @@ class DepartmentModel: Mappable {
     func mapping(map: Map) {
         department <- map["filial_name"]
         city       <- map["name"]
-        gps_x      <- map["GPS_X"]
-        gps_y      <- map["GPS_Y"]
+        lat        <- map["GPS_X"]
+        lon        <- map["GPS_Y"]
     }
 }

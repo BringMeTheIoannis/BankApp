@@ -8,12 +8,13 @@
 import Foundation
 import ObjectMapper
 
-class ATMModel: Mappable {
+class ATMModel: Mappable, Models {
     var area: String = ""
     var work_time: String = ""
-    var gps_x: String = ""
-    var gps_y: String = ""
+    var lat: String = ""
+    var lon: String = ""
     var cash_in: String = ""
+    var city: String = ""
     
     required init?(map: Map) {
         mapping(map: map)
@@ -22,8 +23,9 @@ class ATMModel: Mappable {
     func mapping(map: Map) {
         area        <- map["area"]
         work_time   <- map["work_time"]
-        gps_x       <- map["gps_x"]
-        gps_y       <- map["gps_y"]
+        lat         <- map["gps_x"]
+        lon         <- map["gps_y"]
         cash_in     <- map["cash_in"]
+        city        <- map["city"]
     }
 }
