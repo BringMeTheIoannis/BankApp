@@ -10,6 +10,7 @@
 		59125A182978341800DDBD91 /* TypeOfDepartmentEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59125A172978341800DDBD91 /* TypeOfDepartmentEnum.swift */; };
 		59125A1E29793F2000DDBD91 /* ModelsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59125A1D29793F2000DDBD91 /* ModelsProtocol.swift */; };
 		59125A202979A47100DDBD91 /* GemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59125A1F2979A47100DDBD91 /* GemModel.swift */; };
+		59125A232979AAFB00DDBD91 /* GemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59125A222979AAFB00DDBD91 /* GemViewController.swift */; };
 		59C05018297701DF0045D6ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05017297701DF0045D6ED /* AppDelegate.swift */; };
 		59C0501A297701DF0045D6ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05019297701DF0045D6ED /* SceneDelegate.swift */; };
 		59C0501C297701DF0045D6ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0501B297701DF0045D6ED /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		59125A172978341800DDBD91 /* TypeOfDepartmentEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfDepartmentEnum.swift; sourceTree = "<group>"; };
 		59125A1D29793F2000DDBD91 /* ModelsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsProtocol.swift; sourceTree = "<group>"; };
 		59125A1F2979A47100DDBD91 /* GemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemModel.swift; sourceTree = "<group>"; };
+		59125A222979AAFB00DDBD91 /* GemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemViewController.swift; sourceTree = "<group>"; };
 		59C05014297701DF0045D6ED /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C05017297701DF0045D6ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C05019297701DF0045D6ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,15 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		59125A212979AAE300DDBD91 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				59C0501B297701DF0045D6ED /* ViewController.swift */,
+				59125A222979AAFB00DDBD91 /* GemViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		59C0500B297701DF0045D6ED = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +116,7 @@
 		59C05016297701DF0045D6ED /* BankApp */ = {
 			isa = PBXGroup;
 			children = (
+				59125A212979AAE300DDBD91 /* Controllers */,
 				59125A1C29793F1200DDBD91 /* Protocol */,
 				59125A16297833F800DDBD91 /* Enums */,
 				59C050362977FA310045D6ED /* Cells */,
@@ -113,7 +125,6 @@
 				59C0502B29770F470045D6ED /* Model */,
 				59C05017297701DF0045D6ED /* AppDelegate.swift */,
 				59C05019297701DF0045D6ED /* SceneDelegate.swift */,
-				59C0501B297701DF0045D6ED /* ViewController.swift */,
 				59C0501D297701DF0045D6ED /* Main.storyboard */,
 				59C05020297701E10045D6ED /* Assets.xcassets */,
 				59C05022297701E10045D6ED /* LaunchScreen.storyboard */,
@@ -318,6 +329,7 @@
 				59C0501A297701DF0045D6ED /* SceneDelegate.swift in Sources */,
 				59C05033297711BD0045D6ED /* API.swift in Sources */,
 				59C0502F29770FE20045D6ED /* DepartmentModel.swift in Sources */,
+				59125A232979AAFB00DDBD91 /* GemViewController.swift in Sources */,
 				59C0503A2977FA5A0045D6ED /* CityCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

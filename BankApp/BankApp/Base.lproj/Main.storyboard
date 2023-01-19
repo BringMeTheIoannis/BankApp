@@ -38,17 +38,29 @@
             </objects>
             <point key="canvasLocation" x="-336" y="390"/>
         </scene>
-        <!--Item-->
+        <!--Gem-->
         <scene sceneID="8dL-qg-6Qg">
             <objects>
                 <viewController id="Hj2-f0-xlh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KxM-4Z-B5Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8C0-QK-xcy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TUy-jb-Iaq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TUy-jb-Iaq" firstAttribute="trailing" secondItem="8C0-QK-xcy" secondAttribute="trailing" id="FNO-zJ-t76"/>
+                            <constraint firstItem="8C0-QK-xcy" firstAttribute="leading" secondItem="TUy-jb-Iaq" secondAttribute="leading" id="Gwc-TQ-qXl"/>
+                            <constraint firstItem="8C0-QK-xcy" firstAttribute="top" secondItem="TUy-jb-Iaq" secondAttribute="top" id="in0-LI-AZD"/>
+                            <constraint firstItem="TUy-jb-Iaq" firstAttribute="bottom" secondItem="8C0-QK-xcy" secondAttribute="bottom" id="uPL-jh-lwA"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Mhn-CC-IPv"/>
+                    <tabBarItem key="tabBarItem" title="Gem" image="suit.diamond.fill" catalog="system" id="Mhn-CC-IPv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5az-fp-PbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,6 +173,7 @@
     <resources>
         <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="suit.diamond.fill" catalog="system" width="107" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -42,4 +42,18 @@ class Provider {
             }
         }
     }
+    
+    func getGems(success: @escaping ([GemModel]) -> Void, failure: (() -> Void)?) {
+        provider.request(.gems) { result in
+            switch result {
+            case .success(let response):
+                guard let gems = try? response.mapArray(GemModel.self) else { failure?()
+                    return
+                }
+                success(gems)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
