@@ -10,6 +10,7 @@ import UIKit
 class GemViewController: UIViewController {
     
     var gemsArray = [GemModel]()
+    var isFilteredUp: Bool = false
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -38,6 +39,22 @@ class GemViewController: UIViewController {
             print("Failure of getting gems")
             self.spinner.stopAnimating()
         }
+    }
+    @IBAction func sortingButtonAction(_ sender: UIButton) {
+        
+        if isFilteredUp {
+            sender.setTitle("Asc", for: .normal)
+            gemsArray.sort {
+                $0.cost > $1.cost
+            }
+        } else {
+            sender.setTitle("Desc", for: .normal)
+            gemsArray.sort {
+                $0.cost < $1.cost
+            }
+        }
+        isFilteredUp.toggle()
+        tableView.reloadData()
     }
     
 }
