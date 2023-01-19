@@ -15,14 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="wJn-FN-qCz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJk-TU-RWm">
+                                <rect key="frame" x="0.0" y="812" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Q9T-h4-mML"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WOX-pV-ceo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WOX-pV-ceo" firstAttribute="trailing" secondItem="XJk-TU-RWm" secondAttribute="trailing" id="MZx-jd-Zz8"/>
+                            <constraint firstItem="WOX-pV-ceo" firstAttribute="bottom" secondItem="XJk-TU-RWm" secondAttribute="bottom" id="Og2-Be-cRZ"/>
+                            <constraint firstItem="XJk-TU-RWm" firstAttribute="leading" secondItem="WOX-pV-ceo" secondAttribute="leading" id="kuy-lI-lKc"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="QP5-o0-tVy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzq-3l-LyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-336" y="395"/>
+            <point key="canvasLocation" x="-336.23188405797106" y="394.41964285714283"/>
         </scene>
         <!--Maps-->
         <scene sceneID="bB8-OX-aVY">
