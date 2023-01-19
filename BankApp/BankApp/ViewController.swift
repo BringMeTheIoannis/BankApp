@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var selectedType: TypeOfDepartment = .atm
     var selectedCity: String = ""
     var typesOfDeps = TypeOfDepartment.allCases
+    var isLoadingDeps: Bool = false
 
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var cityCollection: UICollectionView!
@@ -66,6 +67,8 @@ class ViewController: UIViewController {
     }
     
     func getDepartments() {
+        isLoadingDeps = true
+        typeCollection.reloadData()
         Provider().getDepartments { [weak self] departments in
             guard let self = self else { return }
             self.arrayOfDepartments = departments
@@ -74,8 +77,12 @@ class ViewController: UIViewController {
 //            departments.forEach { dep in
 //                self.drawMarker(lat: dep.gps_x, lon: dep.gps_y, color: .red)
 //            }
+            self.isLoadingDeps = false
+            self.typeCollection.reloadData()
         } failure: {
             print("Failure")
+            self.isLoadingDeps = false
+            self.typeCollection.reloadData()
         }
     }
     
@@ -160,6 +167,10 @@ extension ViewController: UICollectionViewDataSource {
             cell.isSelected = selectedTypeIndexPath == indexPath
             cell.setup()
             cell.label.text = typesOfDeps[indexPath.row].rawValue
+            if isLoadingDeps, typesOfDeps[indexPath.row] != .atm  {
+                cell.label.text = ""
+                cell.spinner.startAnimating()
+            }
             return cell
         }
         return cell
@@ -175,6 +186,9 @@ extension ViewController: UICollectionViewDelegate {
             cityCollection.reloadData()
         }
         if collectionView == typeCollection {
+            if isLoadingDeps {
+                return
+            }
             selectedTypeIndexPath = indexPath
             selectedType = typesOfDeps[indexPath.row]
             drawMarkers(selectedType: selectedType, selectedCity: selectedCity)

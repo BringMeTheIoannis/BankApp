@@ -12,6 +12,7 @@ class CityCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

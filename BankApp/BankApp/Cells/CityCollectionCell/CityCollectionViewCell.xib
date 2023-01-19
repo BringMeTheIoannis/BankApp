@@ -26,13 +26,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fNw-KM-XOa">
+                                <rect key="frame" x="200" y="80" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Jjw-Q2-hMy" firstAttribute="leading" secondItem="C31-sD-cZD" secondAttribute="leading" constant="10" id="0ZO-3s-zVT"/>
                             <constraint firstItem="Jjw-Q2-hMy" firstAttribute="centerY" secondItem="C31-sD-cZD" secondAttribute="centerY" id="FKl-jI-IoU"/>
                             <constraint firstItem="Jjw-Q2-hMy" firstAttribute="centerX" secondItem="C31-sD-cZD" secondAttribute="centerX" id="FgR-sy-PsA"/>
+                            <constraint firstItem="fNw-KM-XOa" firstAttribute="centerY" secondItem="C31-sD-cZD" secondAttribute="centerY" id="Ihb-kN-6fh"/>
                             <constraint firstAttribute="trailing" secondItem="Jjw-Q2-hMy" secondAttribute="trailing" constant="10" id="Zrz-T4-xGk"/>
+                            <constraint firstItem="fNw-KM-XOa" firstAttribute="centerX" secondItem="C31-sD-cZD" secondAttribute="centerX" id="y38-xk-l96"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -48,6 +53,7 @@
             <connections>
                 <outlet property="container" destination="C31-sD-cZD" id="Btv-Hz-uMz"/>
                 <outlet property="label" destination="Jjw-Q2-hMy" id="EFw-4X-m5I"/>
+                <outlet property="spinner" destination="fNw-KM-XOa" id="T2a-kO-9OA"/>
             </connections>
             <point key="canvasLocation" x="228.98550724637684" y="32.142857142857139"/>
         </collectionViewCell>
