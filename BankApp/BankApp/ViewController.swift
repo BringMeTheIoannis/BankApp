@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var cityCollection: UICollectionView!
     @IBOutlet weak var typeCollection: UICollectionView!
+    @IBOutlet weak var citiesSpinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
     }
     
     func getATMS() {
+        citiesSpinner.startAnimating()
         Provider().getATM { [weak self] atms in
             guard let self = self else { return }
             self.arrayOfATMS = atms
@@ -60,9 +62,11 @@ class ViewController: UIViewController {
 //                self.drawMarker(lat: atm.gps_x, lon: atm.gps_y, color: .yellow)
 //            }
             self.drawMarkers(selectedType: self.selectedType, selectedCity: self.selectedCity)
+            self.citiesSpinner.stopAnimating()
             self.cityCollection.reloadData()
         } failure: {
             print("Failure: GetATMS")
+            self.citiesSpinner.stopAnimating()
         }
     }
     

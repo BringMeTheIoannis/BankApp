@@ -50,6 +50,10 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="gLB-xJ-vjY">
+                                <rect key="frame" x="0.0" y="672" width="414" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaq-N4-bEg">
                                 <rect key="frame" x="0.0" y="742" width="414" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -78,6 +82,7 @@
                             <constraint firstItem="vaq-N4-bEg" firstAttribute="top" secondItem="xHt-bU-DOF" secondAttribute="bottom" id="6TT-VA-rz1"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="uwY-Xo-5AZ" secondAttribute="trailing" id="8ZE-E9-kjt"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="vaq-N4-bEg" secondAttribute="trailing" id="8ro-d0-8pd"/>
+                            <constraint firstItem="vaq-N4-bEg" firstAttribute="top" secondItem="gLB-xJ-vjY" secondAttribute="bottom" id="AHI-bl-E1d"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="bottom" secondItem="uwY-Xo-5AZ" secondAttribute="bottom" id="ARd-ZU-wFI"/>
                             <constraint firstItem="xHt-bU-DOF" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="IaC-fJ-NNs"/>
                             <constraint firstItem="WqC-EQ-iRI" firstAttribute="top" secondItem="9MS-GR-J4f" secondAttribute="top" id="OFO-WY-B3D"/>
@@ -86,12 +91,14 @@
                             <constraint firstItem="xHt-bU-DOF" firstAttribute="top" secondItem="WqC-EQ-iRI" secondAttribute="bottom" id="aqL-oj-ZYW"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="WqC-EQ-iRI" secondAttribute="trailing" id="f3G-5t-eMj"/>
                             <constraint firstItem="uwY-Xo-5AZ" firstAttribute="top" secondItem="vaq-N4-bEg" secondAttribute="bottom" id="kj2-MC-rdO"/>
+                            <constraint firstItem="gLB-xJ-vjY" firstAttribute="top" secondItem="WqC-EQ-iRI" secondAttribute="bottom" id="o8R-6I-5nj"/>
                             <constraint firstItem="WqC-EQ-iRI" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="xSH-5I-uaz"/>
                             <constraint firstItem="vaq-N4-bEg" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="zuZ-jC-ya4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Maps" image="mappin" catalog="system" id="F1w-A7-er0"/>
                     <connections>
+                        <outlet property="citiesSpinner" destination="gLB-xJ-vjY" id="m42-9O-6eo"/>
                         <outlet property="cityCollection" destination="xHt-bU-DOF" id="AJX-cF-8rl"/>
                         <outlet property="mapView" destination="WqC-EQ-iRI" id="X6n-9z-xjn"/>
                         <outlet property="typeCollection" destination="vaq-N4-bEg" id="VHG-GC-dC9"/>
