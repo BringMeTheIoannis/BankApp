@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         cityCollection.delegate = self
         typeCollection.dataSource = self
         typeCollection.delegate = self
+
+
         registerCells()
         initMap()
         getATMS()

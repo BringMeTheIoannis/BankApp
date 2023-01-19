@@ -38,17 +38,48 @@
             </objects>
             <point key="canvasLocation" x="-336" y="390"/>
         </scene>
-        <!--Item-->
+        <!--Gem-->
         <scene sceneID="8dL-qg-6Qg">
             <objects>
-                <viewController id="Hj2-f0-xlh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GemViewController" id="Hj2-f0-xlh" customClass="GemViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KxM-4Z-B5Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8C0-QK-xcy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rW8-rB-Ki8">
+                                <rect key="frame" x="299.5" y="64" width="104.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.up.arrow.down" catalog="system" imagePlacement="trailing" title="No Filter"/>
+                                <connections>
+                                    <action selector="sortingButtonAction:" destination="Hj2-f0-xlh" eventType="touchUpInside" id="fmv-JP-IsS"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="G7e-gD-pe0">
+                                <rect key="frame" x="197" y="418.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TUy-jb-Iaq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TUy-jb-Iaq" firstAttribute="trailing" secondItem="rW8-rB-Ki8" secondAttribute="trailing" constant="10" id="23C-Cb-UHU"/>
+                            <constraint firstItem="TUy-jb-Iaq" firstAttribute="trailing" secondItem="8C0-QK-xcy" secondAttribute="trailing" id="FNO-zJ-t76"/>
+                            <constraint firstItem="8C0-QK-xcy" firstAttribute="leading" secondItem="TUy-jb-Iaq" secondAttribute="leading" id="Gwc-TQ-qXl"/>
+                            <constraint firstItem="rW8-rB-Ki8" firstAttribute="top" secondItem="TUy-jb-Iaq" secondAttribute="top" constant="20" id="HDt-Qm-MUi"/>
+                            <constraint firstItem="G7e-gD-pe0" firstAttribute="centerY" secondItem="TUy-jb-Iaq" secondAttribute="centerY" id="YtY-vk-92T"/>
+                            <constraint firstItem="8C0-QK-xcy" firstAttribute="top" secondItem="TUy-jb-Iaq" secondAttribute="top" id="in0-LI-AZD"/>
+                            <constraint firstItem="G7e-gD-pe0" firstAttribute="centerX" secondItem="TUy-jb-Iaq" secondAttribute="centerX" id="s2F-Iw-FRP"/>
+                            <constraint firstItem="TUy-jb-Iaq" firstAttribute="bottom" secondItem="8C0-QK-xcy" secondAttribute="bottom" id="uPL-jh-lwA"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Mhn-CC-IPv"/>
+                    <tabBarItem key="tabBarItem" title="Gem" image="suit.diamond.fill" catalog="system" id="Mhn-CC-IPv"/>
+                    <connections>
+                        <outlet property="spinner" destination="G7e-gD-pe0" id="EQA-1I-8Pv"/>
+                        <outlet property="tableView" destination="8C0-QK-xcy" id="qGL-AJ-ipk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5az-fp-PbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,8 +190,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="suit.diamond.fill" catalog="system" width="107" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

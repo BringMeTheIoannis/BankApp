@@ -12,6 +12,7 @@ import Moya
 enum Requests {
     case atm
     case departments
+    case gems
 }
 
 extension Requests: TargetType {
@@ -25,6 +26,8 @@ extension Requests: TargetType {
             return "atm"
         case .departments:
             return "filials_info"
+        case .gems:
+            return "getgems"
         }
     }
     
@@ -33,6 +36,8 @@ extension Requests: TargetType {
         case .atm:
             return .get
         case .departments:
+            return .get
+        case .gems:
             return .get
         }
     }
@@ -46,6 +51,8 @@ extension Requests: TargetType {
         case .atm:
             return .requestPlain
         case .departments:
+            return .requestPlain
+        case .gems:
             return .requestPlain
         }
     }
