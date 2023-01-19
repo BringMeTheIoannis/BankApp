@@ -41,7 +41,7 @@
         <!--Gem-->
         <scene sceneID="8dL-qg-6Qg">
             <objects>
-                <viewController id="Hj2-f0-xlh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GemViewController" id="Hj2-f0-xlh" customClass="GemViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KxM-4Z-B5Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,17 +50,26 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="G7e-gD-pe0">
+                                <rect key="frame" x="197" y="418.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TUy-jb-Iaq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TUy-jb-Iaq" firstAttribute="trailing" secondItem="8C0-QK-xcy" secondAttribute="trailing" id="FNO-zJ-t76"/>
                             <constraint firstItem="8C0-QK-xcy" firstAttribute="leading" secondItem="TUy-jb-Iaq" secondAttribute="leading" id="Gwc-TQ-qXl"/>
+                            <constraint firstItem="G7e-gD-pe0" firstAttribute="centerY" secondItem="TUy-jb-Iaq" secondAttribute="centerY" id="YtY-vk-92T"/>
                             <constraint firstItem="8C0-QK-xcy" firstAttribute="top" secondItem="TUy-jb-Iaq" secondAttribute="top" id="in0-LI-AZD"/>
+                            <constraint firstItem="G7e-gD-pe0" firstAttribute="centerX" secondItem="TUy-jb-Iaq" secondAttribute="centerX" id="s2F-Iw-FRP"/>
                             <constraint firstItem="TUy-jb-Iaq" firstAttribute="bottom" secondItem="8C0-QK-xcy" secondAttribute="bottom" id="uPL-jh-lwA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Gem" image="suit.diamond.fill" catalog="system" id="Mhn-CC-IPv"/>
+                    <connections>
+                        <outlet property="spinner" destination="G7e-gD-pe0" id="EQA-1I-8Pv"/>
+                        <outlet property="tableView" destination="8C0-QK-xcy" id="qGL-AJ-ipk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5az-fp-PbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,6 +11,8 @@
 		59125A1E29793F2000DDBD91 /* ModelsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59125A1D29793F2000DDBD91 /* ModelsProtocol.swift */; };
 		59125A202979A47100DDBD91 /* GemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59125A1F2979A47100DDBD91 /* GemModel.swift */; };
 		59125A232979AAFB00DDBD91 /* GemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59125A222979AAFB00DDBD91 /* GemViewController.swift */; };
+		59125A262979AB8900DDBD91 /* GemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59125A242979AB8900DDBD91 /* GemsCell.swift */; };
+		59125A272979AB8900DDBD91 /* GemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59125A252979AB8900DDBD91 /* GemsCell.xib */; };
 		59C05018297701DF0045D6ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05017297701DF0045D6ED /* AppDelegate.swift */; };
 		59C0501A297701DF0045D6ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05019297701DF0045D6ED /* SceneDelegate.swift */; };
 		59C0501C297701DF0045D6ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0501B297701DF0045D6ED /* ViewController.swift */; };
@@ -32,6 +34,8 @@
 		59125A1D29793F2000DDBD91 /* ModelsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsProtocol.swift; sourceTree = "<group>"; };
 		59125A1F2979A47100DDBD91 /* GemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemModel.swift; sourceTree = "<group>"; };
 		59125A222979AAFB00DDBD91 /* GemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemViewController.swift; sourceTree = "<group>"; };
+		59125A242979AB8900DDBD91 /* GemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemsCell.swift; sourceTree = "<group>"; };
+		59125A252979AB8900DDBD91 /* GemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GemsCell.xib; sourceTree = "<group>"; };
 		59C05014297701DF0045D6ED /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C05017297701DF0045D6ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C05019297701DF0045D6ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 				59125A222979AAFB00DDBD91 /* GemViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		59125A282979AB9400DDBD91 /* GemTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				59125A242979AB8900DDBD91 /* GemsCell.swift */,
+				59125A252979AB8900DDBD91 /* GemsCell.xib */,
+			);
+			path = GemTableCell;
 			sourceTree = "<group>";
 		};
 		59C0500B297701DF0045D6ED = {
@@ -162,6 +175,7 @@
 		59C050362977FA310045D6ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				59125A282979AB9400DDBD91 /* GemTableCell */,
 				59C050372977FA380045D6ED /* CityCollectionCell */,
 			);
 			path = Cells;
@@ -248,6 +262,7 @@
 			files = (
 				59C05024297701E10045D6ED /* LaunchScreen.storyboard in Resources */,
 				59C05021297701E10045D6ED /* Assets.xcassets in Resources */,
+				59125A272979AB8900DDBD91 /* GemsCell.xib in Resources */,
 				59C0501F297701DF0045D6ED /* Main.storyboard in Resources */,
 				59C0503B2977FA5A0045D6ED /* CityCollectionViewCell.xib in Resources */,
 			);
@@ -321,6 +336,7 @@
 			files = (
 				59125A202979A47100DDBD91 /* GemModel.swift in Sources */,
 				59125A182978341800DDBD91 /* TypeOfDepartmentEnum.swift in Sources */,
+				59125A262979AB8900DDBD91 /* GemsCell.swift in Sources */,
 				59C0502D29770F970045D6ED /* ATMModel.swift in Sources */,
 				59C0501C297701DF0045D6ED /* ViewController.swift in Sources */,
 				59C05035297713280045D6ED /* Provider.swift in Sources */,
