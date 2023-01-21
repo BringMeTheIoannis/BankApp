@@ -33,11 +33,7 @@ extension Requests: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .atm:
-            return .get
-        case .departments:
-            return .get
-        case .gems:
+        case .atm, .departments, .gems:
             return .get
         }
     }

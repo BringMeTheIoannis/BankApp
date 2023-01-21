@@ -33,7 +33,8 @@ class Provider {
         provider.request(.departments) { result in
             switch result {
             case .success(let response):
-                guard let departments = try? response.mapArray(DepartmentModel.self) else { failure?()
+                guard let departments = try? response.mapArray(DepartmentModel.self) else {
+                    failure?()
                     return
                 }
                 success(departments)
@@ -47,7 +48,8 @@ class Provider {
         provider.request(.gems) { result in
             switch result {
             case .success(let response):
-                guard let gems = try? response.mapArray(GemModel.self) else { failure?()
+                guard let gems = try? response.mapArray(GemModel.self) else {
+                    failure?()
                     return
                 }
                 success(gems)

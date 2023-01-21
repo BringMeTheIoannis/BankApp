@@ -9,14 +9,13 @@ import Foundation
 import ObjectMapper
 
 class DrallModel: Mappable {
-    
-    
+    var city: String = ""
     
     required init?(map: Map) {
         mapping(map: map)
     }
     
     func mapping(map: Map) {
-        <#code#>
+        
     }
 }

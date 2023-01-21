@@ -9,6 +9,10 @@ import UIKit
 import GoogleMaps
 
 class ViewController: UIViewController {
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var cityCollection: UICollectionView!
+    @IBOutlet weak var typeCollection: UICollectionView!
+    @IBOutlet weak var citiesSpinner: UIActivityIndicatorView!
     
     var arrayOfATMS = [Models]()
     var filteredArrayOfATMS = [Models]()
@@ -22,11 +26,6 @@ class ViewController: UIViewController {
     var typesOfDeps = TypeOfDepartment.allCases
     var isLoadingDeps: Bool = false
 
-    @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var cityCollection: UICollectionView!
-    @IBOutlet weak var typeCollection: UICollectionView!
-    @IBOutlet weak var citiesSpinner: UIActivityIndicatorView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         cityCollection.dataSource = self
@@ -42,7 +41,7 @@ class ViewController: UIViewController {
         typeCollection.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
     
-    func registerCells() {
+    private func registerCells() {
         let nib = UINib(nibName: CityCollectionViewCell.id, bundle: nil)
         cityCollection.register(nib, forCellWithReuseIdentifier: CityCollectionViewCell.id)
         typeCollection.register(nib, forCellWithReuseIdentifier: CityCollectionViewCell.id)
@@ -101,7 +100,8 @@ class ViewController: UIViewController {
                 return true
             }
         }
-        selectedCity = cities[0]
+        guard let firstCity = cities.first else { return }
+        selectedCity = firstCity
     }
     
     func makeUniqueCitiesArray(array: [DepartmentModel]) {
@@ -116,8 +116,7 @@ class ViewController: UIViewController {
     }
     
     func drawMarker(lat: String, lon: String, color: UIColor) {
-        let intLon = Double(lon) ?? 0
-        let intLat = Double(lat) ?? 0
+        guard let intLon = Double(lon), let intLat = Double(lat) else { return }
         let position = CLLocationCoordinate2D(latitude: intLat, longitude: intLon)
         let marker = GMSMarker(position: position)
         marker.icon = GMSMarker.markerImage(with: color)
@@ -125,9 +124,7 @@ class ViewController: UIViewController {
     }
     
     func filterAndDraw(selectedCity: String, array: [Models], filteredArray: inout [Models], colorOfPin: UIColor) {
-        filteredArray = array.filter{ atm in
-            atm.city == selectedCity
-        }
+        filteredArray = array.filter{ $0.city == selectedCity }
         filteredArray.forEach { atmFilt in
             drawMarker(lat: atmFilt.lat, lon: atmFilt.lon, color: colorOfPin)
         }
@@ -164,14 +161,12 @@ extension ViewController: UICollectionViewDataSource {
         if collectionView == cityCollection {
             guard let cell = cell as? CityCollectionViewCell else { return cell }
             cell.isSelected = selectedCityIndexPath == indexPath
-            cell.setup()
             cell.label.text = cities[indexPath.row]
             return cell
         }
         if collectionView == typeCollection {
             guard let cell = cell as? CityCollectionViewCell else { return cell}
             cell.isSelected = selectedTypeIndexPath == indexPath
-            cell.setup()
             cell.label.text = typesOfDeps[indexPath.row].rawValue
             if isLoadingDeps, typesOfDeps[indexPath.row] != .atm  {
                 cell.label.text = ""

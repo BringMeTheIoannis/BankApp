@@ -19,7 +19,7 @@ class CityCollectionViewCell: UICollectionViewCell {
         setup()
     }
     
-    func setup() {
+    private func setup() {
         self.container.layer.cornerRadius = 15
         self.container.layer.borderWidth = 1.0
         self.container.layer.borderColor = UIColor.black.cgColor

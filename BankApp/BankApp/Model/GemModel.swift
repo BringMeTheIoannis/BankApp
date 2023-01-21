@@ -9,7 +9,6 @@ import Foundation
 import ObjectMapper
  
 class GemModel: Mappable {
-    
     var number: String = ""
     var shape: String = ""
     var grani: String = ""
