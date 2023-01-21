@@ -58,4 +58,18 @@ class Provider {
             }
         }
     }
+    
+    func getDrallInfo(success: @escaping ([DrallModel]) -> Void, failure: (() -> Void)?) {
+        provider.request(.drall) { result in
+            switch result {
+            case .success(let response):
+                guard let drall = try? response.mapArray(DrallModel.self) else {
+                    failure?()
+                    return}
+                success(drall)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
