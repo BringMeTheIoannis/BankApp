@@ -33,7 +33,8 @@ class Provider {
         provider.request(.departments) { result in
             switch result {
             case .success(let response):
-                guard let departments = try? response.mapArray(DepartmentModel.self) else { failure?()
+                guard let departments = try? response.mapArray(DepartmentModel.self) else {
+                    failure?()
                     return
                 }
                 success(departments)
@@ -47,10 +48,25 @@ class Provider {
         provider.request(.gems) { result in
             switch result {
             case .success(let response):
-                guard let gems = try? response.mapArray(GemModel.self) else { failure?()
+                guard let gems = try? response.mapArray(GemModel.self) else {
+                    failure?()
                     return
                 }
                 success(gems)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getDrallInfo(success: @escaping ([DrallModel]) -> Void, failure: (() -> Void)?) {
+        provider.request(.drall) { result in
+            switch result {
+            case .success(let response):
+                guard let drall = try? response.mapArray(DrallModel.self) else {
+                    failure?()
+                    return}
+                success(drall)
             case .failure(let error):
                 print(error.localizedDescription)
             }

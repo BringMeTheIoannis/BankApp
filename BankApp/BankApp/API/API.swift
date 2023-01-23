@@ -13,6 +13,7 @@ enum Requests {
     case atm
     case departments
     case gems
+    case drall
 }
 
 extension Requests: TargetType {
@@ -28,16 +29,14 @@ extension Requests: TargetType {
             return "filials_info"
         case .gems:
             return "getgems"
+        case .drall:
+            return "getinfodrall"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .atm:
-            return .get
-        case .departments:
-            return .get
-        case .gems:
+        case .atm, .departments, .gems, .drall:
             return .get
         }
     }
@@ -53,6 +52,8 @@ extension Requests: TargetType {
         case .departments:
             return .requestPlain
         case .gems:
+            return .requestPlain
+        case .drall:
             return .requestPlain
         }
     }

@@ -14,9 +14,13 @@
 		59125A262979AB8900DDBD91 /* GemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59125A242979AB8900DDBD91 /* GemsCell.swift */; };
 		59125A272979AB8900DDBD91 /* GemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59125A252979AB8900DDBD91 /* GemsCell.xib */; };
 		5999B0AE2979C08A0097F0D9 /* DrallModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0AD2979C08A0097F0D9 /* DrallModel.swift */; };
+		5999B0B0297BECBD0097F0D9 /* DrallInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0AF297BECBD0097F0D9 /* DrallInfoViewController.swift */; };
+		5999B0B2297BF40D0097F0D9 /* SegmentedControlEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0B1297BF40D0097F0D9 /* SegmentedControlEnum.swift */; };
+		5999B0B6297BFACA0097F0D9 /* DrallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0B4297BFACA0097F0D9 /* DrallCell.swift */; };
+		5999B0B7297BFACA0097F0D9 /* DrallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B0B5297BFACA0097F0D9 /* DrallCell.xib */; };
 		59C05018297701DF0045D6ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05017297701DF0045D6ED /* AppDelegate.swift */; };
 		59C0501A297701DF0045D6ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05019297701DF0045D6ED /* SceneDelegate.swift */; };
-		59C0501C297701DF0045D6ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0501B297701DF0045D6ED /* ViewController.swift */; };
+		59C0501C297701DF0045D6ED /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0501B297701DF0045D6ED /* MapViewController.swift */; };
 		59C0501F297701DF0045D6ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C0501D297701DF0045D6ED /* Main.storyboard */; };
 		59C05021297701E10045D6ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C05020297701E10045D6ED /* Assets.xcassets */; };
 		59C05024297701E10045D6ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C05022297701E10045D6ED /* LaunchScreen.storyboard */; };
@@ -38,10 +42,14 @@
 		59125A242979AB8900DDBD91 /* GemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemsCell.swift; sourceTree = "<group>"; };
 		59125A252979AB8900DDBD91 /* GemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GemsCell.xib; sourceTree = "<group>"; };
 		5999B0AD2979C08A0097F0D9 /* DrallModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrallModel.swift; sourceTree = "<group>"; };
+		5999B0AF297BECBD0097F0D9 /* DrallInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrallInfoViewController.swift; sourceTree = "<group>"; };
+		5999B0B1297BF40D0097F0D9 /* SegmentedControlEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlEnum.swift; sourceTree = "<group>"; };
+		5999B0B4297BFACA0097F0D9 /* DrallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrallCell.swift; sourceTree = "<group>"; };
+		5999B0B5297BFACA0097F0D9 /* DrallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrallCell.xib; sourceTree = "<group>"; };
 		59C05014297701DF0045D6ED /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C05017297701DF0045D6ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C05019297701DF0045D6ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		59C0501B297701DF0045D6ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		59C0501B297701DF0045D6ED /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		59C0501E297701DF0045D6ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59C05020297701E10045D6ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59C05023297701E10045D6ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				59125A172978341800DDBD91 /* TypeOfDepartmentEnum.swift */,
+				5999B0B1297BF40D0097F0D9 /* SegmentedControlEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -95,8 +104,9 @@
 		59125A212979AAE300DDBD91 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				59C0501B297701DF0045D6ED /* ViewController.swift */,
+				59C0501B297701DF0045D6ED /* MapViewController.swift */,
 				59125A222979AAFB00DDBD91 /* GemViewController.swift */,
+				5999B0AF297BECBD0097F0D9 /* DrallInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -108,6 +118,15 @@
 				59125A252979AB8900DDBD91 /* GemsCell.xib */,
 			);
 			path = GemTableCell;
+			sourceTree = "<group>";
+		};
+		5999B0B3297BFAA60097F0D9 /* DrallTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				5999B0B4297BFACA0097F0D9 /* DrallCell.swift */,
+				5999B0B5297BFACA0097F0D9 /* DrallCell.xib */,
+			);
+			path = DrallTableCell;
 			sourceTree = "<group>";
 		};
 		59C0500B297701DF0045D6ED = {
@@ -178,6 +197,7 @@
 		59C050362977FA310045D6ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5999B0B3297BFAA60097F0D9 /* DrallTableCell */,
 				59125A282979AB9400DDBD91 /* GemTableCell */,
 				59C050372977FA380045D6ED /* CityCollectionCell */,
 			);
@@ -264,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59C05024297701E10045D6ED /* LaunchScreen.storyboard in Resources */,
+				5999B0B7297BFACA0097F0D9 /* DrallCell.xib in Resources */,
 				59C05021297701E10045D6ED /* Assets.xcassets in Resources */,
 				59125A272979AB8900DDBD91 /* GemsCell.xib in Resources */,
 				59C0501F297701DF0045D6ED /* Main.storyboard in Resources */,
@@ -337,13 +358,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5999B0B0297BECBD0097F0D9 /* DrallInfoViewController.swift in Sources */,
 				59125A202979A47100DDBD91 /* GemModel.swift in Sources */,
 				59125A182978341800DDBD91 /* TypeOfDepartmentEnum.swift in Sources */,
 				59125A262979AB8900DDBD91 /* GemsCell.swift in Sources */,
 				59C0502D29770F970045D6ED /* ATMModel.swift in Sources */,
-				59C0501C297701DF0045D6ED /* ViewController.swift in Sources */,
+				59C0501C297701DF0045D6ED /* MapViewController.swift in Sources */,
 				59C05035297713280045D6ED /* Provider.swift in Sources */,
+				5999B0B2297BF40D0097F0D9 /* SegmentedControlEnum.swift in Sources */,
 				59C05018297701DF0045D6ED /* AppDelegate.swift in Sources */,
+				5999B0B6297BFACA0097F0D9 /* DrallCell.swift in Sources */,
 				59125A1E29793F2000DDBD91 /* ModelsProtocol.swift in Sources */,
 				59C0501A297701DF0045D6ED /* SceneDelegate.swift in Sources */,
 				5999B0AE2979C08A0097F0D9 /* DrallModel.swift in Sources */,

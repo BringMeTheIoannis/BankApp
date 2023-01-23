@@ -67,10 +67,10 @@ extension GemViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GemsCell.id, for: indexPath)
         guard let cell = cell as? GemsCell else { return cell}
-        cell.numberLabel.text = gemsArray[indexPath.row].number
+        cell.numberLabel.text = "Number: \(gemsArray[indexPath.row].number)"
         cell.nameGraniWeight.text = "Shape: \(gemsArray[indexPath.row].shape) Grani: \(gemsArray[indexPath.row].grani) Weight: \(gemsArray[indexPath.row].weight)"
-        cell.color.text = gemsArray[indexPath.row].color
-        cell.cost.text = gemsArray[indexPath.row].cost
+        cell.color.text = "Color: \(gemsArray[indexPath.row].color)"
+        cell.cost.text = "Cost: \(gemsArray[indexPath.row].cost)"
         return cell
     }
 }

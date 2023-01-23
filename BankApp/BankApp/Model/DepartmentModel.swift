@@ -10,13 +10,10 @@ import ObjectMapper
 
 
 class DepartmentModel: Mappable, Models {
-    
-    
     var department: String = ""
     var city: String = ""
     var lat: String = ""
     var lon: String = ""
-    
     
     required init?(map: Map) {
         mapping(map: map)

@@ -15,28 +15,63 @@
                     <view key="view" contentMode="scaleToFill" id="wJn-FN-qCz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJk-TU-RWm">
-                                <rect key="frame" x="0.0" y="812" width="414" height="1"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="Q9T-h4-mML"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WOX-pV-ceo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="WOX-pV-ceo" firstAttribute="trailing" secondItem="XJk-TU-RWm" secondAttribute="trailing" id="MZx-jd-Zz8"/>
-                            <constraint firstItem="WOX-pV-ceo" firstAttribute="bottom" secondItem="XJk-TU-RWm" secondAttribute="bottom" id="Og2-Be-cRZ"/>
-                            <constraint firstItem="XJk-TU-RWm" firstAttribute="leading" secondItem="WOX-pV-ceo" secondAttribute="leading" id="kuy-lI-lKc"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="QP5-o0-tVy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzq-3l-LyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-336" y="390"/>
+            <point key="canvasLocation" x="-336" y="350"/>
+        </scene>
+        <!--Metals-->
+        <scene sceneID="D49-oA-2DN">
+            <objects>
+                <viewController storyboardIdentifier="DrallInfoViewController" id="oVd-vr-ZT4" customClass="DrallInfoViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a8U-bN-a3c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qk6-1A-VqD">
+                                <rect key="frame" x="40" y="44" width="334" height="32"/>
+                                <segments>
+                                    <segment title="Gold"/>
+                                    <segment title="Silver"/>
+                                    <segment title="Platinum"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NWH-mb-orN">
+                                <rect key="frame" x="0.0" y="85" width="414" height="728"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bfo-30-ATL">
+                                <rect key="frame" x="197" y="418.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gjk-I4-TRd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qk6-1A-VqD" firstAttribute="top" secondItem="gjk-I4-TRd" secondAttribute="top" id="228-S7-OhL"/>
+                            <constraint firstItem="NWH-mb-orN" firstAttribute="top" secondItem="Qk6-1A-VqD" secondAttribute="bottom" constant="10" id="Aci-TA-Sjz"/>
+                            <constraint firstItem="bfo-30-ATL" firstAttribute="centerY" secondItem="gjk-I4-TRd" secondAttribute="centerY" id="HOo-si-5ng"/>
+                            <constraint firstItem="gjk-I4-TRd" firstAttribute="trailing" secondItem="Qk6-1A-VqD" secondAttribute="trailing" constant="40" id="NfF-BG-EhM"/>
+                            <constraint firstItem="Qk6-1A-VqD" firstAttribute="leading" secondItem="gjk-I4-TRd" secondAttribute="leading" constant="40" id="OuU-zi-oS2"/>
+                            <constraint firstItem="gjk-I4-TRd" firstAttribute="bottom" secondItem="NWH-mb-orN" secondAttribute="bottom" id="azZ-4o-uPi"/>
+                            <constraint firstItem="gjk-I4-TRd" firstAttribute="trailing" secondItem="NWH-mb-orN" secondAttribute="trailing" id="jJQ-ev-IgK"/>
+                            <constraint firstItem="NWH-mb-orN" firstAttribute="leading" secondItem="gjk-I4-TRd" secondAttribute="leading" id="pSl-8c-fbx"/>
+                            <constraint firstItem="bfo-30-ATL" firstAttribute="centerX" secondItem="gjk-I4-TRd" secondAttribute="centerX" id="xU1-Jc-y8R"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Metals" image="banknote" catalog="system" id="ilq-ad-1es"/>
+                    <connections>
+                        <outlet property="segmentControl" destination="Qk6-1A-VqD" id="wif-c8-8DX"/>
+                        <outlet property="spinner" destination="bfo-30-ATL" id="mha-m0-D0f"/>
+                        <outlet property="tableView" destination="NWH-mb-orN" id="6Z0-Qi-O5j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qak-Ut-ejE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-336" y="1778"/>
         </scene>
         <!--Gem-->
         <scene sceneID="8dL-qg-6Qg">
@@ -51,9 +86,9 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rW8-rB-Ki8">
-                                <rect key="frame" x="299.5" y="64" width="104.5" height="31"/>
+                                <rect key="frame" x="327" y="44" width="77" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.up.arrow.down" catalog="system" imagePlacement="trailing" title="No Filter"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.up.arrow.down" catalog="system" imagePlacement="trailing" title="Sort"/>
                                 <connections>
                                     <action selector="sortingButtonAction:" destination="Hj2-f0-xlh" eventType="touchUpInside" id="fmv-JP-IsS"/>
                                 </connections>
@@ -68,7 +103,7 @@
                             <constraint firstItem="TUy-jb-Iaq" firstAttribute="trailing" secondItem="rW8-rB-Ki8" secondAttribute="trailing" constant="10" id="23C-Cb-UHU"/>
                             <constraint firstItem="TUy-jb-Iaq" firstAttribute="trailing" secondItem="8C0-QK-xcy" secondAttribute="trailing" id="FNO-zJ-t76"/>
                             <constraint firstItem="8C0-QK-xcy" firstAttribute="leading" secondItem="TUy-jb-Iaq" secondAttribute="leading" id="Gwc-TQ-qXl"/>
-                            <constraint firstItem="rW8-rB-Ki8" firstAttribute="top" secondItem="TUy-jb-Iaq" secondAttribute="top" constant="20" id="HDt-Qm-MUi"/>
+                            <constraint firstItem="rW8-rB-Ki8" firstAttribute="top" secondItem="TUy-jb-Iaq" secondAttribute="top" id="HDt-Qm-MUi"/>
                             <constraint firstItem="G7e-gD-pe0" firstAttribute="centerY" secondItem="TUy-jb-Iaq" secondAttribute="centerY" id="YtY-vk-92T"/>
                             <constraint firstItem="8C0-QK-xcy" firstAttribute="top" secondItem="TUy-jb-Iaq" secondAttribute="top" id="in0-LI-AZD"/>
                             <constraint firstItem="G7e-gD-pe0" firstAttribute="centerX" secondItem="TUy-jb-Iaq" secondAttribute="centerX" id="s2F-Iw-FRP"/>
@@ -83,12 +118,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5az-fp-PbQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-336" y="1164"/>
+            <point key="canvasLocation" x="-336.23188405797106" y="1070.7589285714284"/>
         </scene>
         <!--Maps-->
         <scene sceneID="bB8-OX-aVY">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="fBs-Mk-qs9" customClass="ViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="fBs-Mk-qs9" customClass="MapViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9MS-GR-J4f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,10 +151,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaq-N4-bEg">
-                                <rect key="frame" x="0.0" y="742" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="742" width="414" height="71"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="eaz-gi-EAP"/>
+                                    <constraint firstAttribute="height" constant="71" id="eaz-gi-EAP"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HjT-wF-Jkj">
                                     <size key="itemSize" width="128" height="128"/>
@@ -129,29 +164,19 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwY-Xo-5AZ">
-                                <rect key="frame" x="0.0" y="812" width="414" height="1"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="LJ8-m7-bU7"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sIh-XW-Da9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vaq-N4-bEg" firstAttribute="top" secondItem="xHt-bU-DOF" secondAttribute="bottom" id="6TT-VA-rz1"/>
-                            <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="uwY-Xo-5AZ" secondAttribute="trailing" id="8ZE-E9-kjt"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="vaq-N4-bEg" secondAttribute="trailing" id="8ro-d0-8pd"/>
                             <constraint firstItem="vaq-N4-bEg" firstAttribute="top" secondItem="gLB-xJ-vjY" secondAttribute="bottom" id="AHI-bl-E1d"/>
-                            <constraint firstItem="sIh-XW-Da9" firstAttribute="bottom" secondItem="uwY-Xo-5AZ" secondAttribute="bottom" id="ARd-ZU-wFI"/>
                             <constraint firstItem="xHt-bU-DOF" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="IaC-fJ-NNs"/>
                             <constraint firstItem="WqC-EQ-iRI" firstAttribute="top" secondItem="9MS-GR-J4f" secondAttribute="top" id="OFO-WY-B3D"/>
-                            <constraint firstItem="uwY-Xo-5AZ" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="U7M-VI-cXG"/>
+                            <constraint firstItem="sIh-XW-Da9" firstAttribute="bottom" secondItem="vaq-N4-bEg" secondAttribute="bottom" id="WTi-bs-Ndq"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="xHt-bU-DOF" secondAttribute="trailing" id="YXA-oH-bmi"/>
                             <constraint firstItem="xHt-bU-DOF" firstAttribute="top" secondItem="WqC-EQ-iRI" secondAttribute="bottom" id="aqL-oj-ZYW"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="WqC-EQ-iRI" secondAttribute="trailing" id="f3G-5t-eMj"/>
-                            <constraint firstItem="uwY-Xo-5AZ" firstAttribute="top" secondItem="vaq-N4-bEg" secondAttribute="bottom" id="kj2-MC-rdO"/>
                             <constraint firstItem="gLB-xJ-vjY" firstAttribute="top" secondItem="WqC-EQ-iRI" secondAttribute="bottom" id="o8R-6I-5nj"/>
                             <constraint firstItem="WqC-EQ-iRI" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="xSH-5I-uaz"/>
                             <constraint firstItem="vaq-N4-bEg" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="zuZ-jC-ya4"/>
@@ -182,6 +207,7 @@
                         <segue destination="fBs-Mk-qs9" kind="relationship" relationship="viewControllers" id="OAD-ll-5LN"/>
                         <segue destination="9rD-sX-vpE" kind="relationship" relationship="viewControllers" id="VQi-bq-yf0"/>
                         <segue destination="Hj2-f0-xlh" kind="relationship" relationship="viewControllers" id="Trq-Oh-9FY"/>
+                        <segue destination="oVd-vr-ZT4" kind="relationship" relationship="viewControllers" id="qOi-Nt-Cen"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quw-eS-Tsi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -191,14 +217,12 @@
     </scenes>
     <resources>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
+        <image name="banknote" catalog="system" width="128" height="78"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="suit.diamond.fill" catalog="system" width="107" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
