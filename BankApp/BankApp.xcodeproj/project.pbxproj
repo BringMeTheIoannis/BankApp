@@ -18,6 +18,9 @@
 		5999B0B2297BF40D0097F0D9 /* SegmentedControlEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0B1297BF40D0097F0D9 /* SegmentedControlEnum.swift */; };
 		5999B0B6297BFACA0097F0D9 /* DrallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0B4297BFACA0097F0D9 /* DrallCell.swift */; };
 		5999B0B7297BFACA0097F0D9 /* DrallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B0B5297BFACA0097F0D9 /* DrallCell.xib */; };
+		5999B0B9297F20600097F0D9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0B8297F20600097F0D9 /* NewsViewController.swift */; };
+		5999B0BD297F217E0097F0D9 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0BB297F217E0097F0D9 /* NewsCell.swift */; };
+		5999B0BE297F217E0097F0D9 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B0BC297F217E0097F0D9 /* NewsCell.xib */; };
 		59C05018297701DF0045D6ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05017297701DF0045D6ED /* AppDelegate.swift */; };
 		59C0501A297701DF0045D6ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05019297701DF0045D6ED /* SceneDelegate.swift */; };
 		59C0501C297701DF0045D6ED /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0501B297701DF0045D6ED /* MapViewController.swift */; };
@@ -46,6 +49,9 @@
 		5999B0B1297BF40D0097F0D9 /* SegmentedControlEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlEnum.swift; sourceTree = "<group>"; };
 		5999B0B4297BFACA0097F0D9 /* DrallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrallCell.swift; sourceTree = "<group>"; };
 		5999B0B5297BFACA0097F0D9 /* DrallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrallCell.xib; sourceTree = "<group>"; };
+		5999B0B8297F20600097F0D9 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		5999B0BB297F217E0097F0D9 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		5999B0BC297F217E0097F0D9 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		59C05014297701DF0045D6ED /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C05017297701DF0045D6ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C05019297701DF0045D6ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 				59C0501B297701DF0045D6ED /* MapViewController.swift */,
 				59125A222979AAFB00DDBD91 /* GemViewController.swift */,
 				5999B0AF297BECBD0097F0D9 /* DrallInfoViewController.swift */,
+				5999B0B8297F20600097F0D9 /* NewsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,6 +134,15 @@
 				5999B0B5297BFACA0097F0D9 /* DrallCell.xib */,
 			);
 			path = DrallTableCell;
+			sourceTree = "<group>";
+		};
+		5999B0BA297F215C0097F0D9 /* NewsTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				5999B0BB297F217E0097F0D9 /* NewsCell.swift */,
+				5999B0BC297F217E0097F0D9 /* NewsCell.xib */,
+			);
+			path = NewsTableCell;
 			sourceTree = "<group>";
 		};
 		59C0500B297701DF0045D6ED = {
@@ -197,6 +213,7 @@
 		59C050362977FA310045D6ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5999B0BA297F215C0097F0D9 /* NewsTableCell */,
 				5999B0B3297BFAA60097F0D9 /* DrallTableCell */,
 				59125A282979AB9400DDBD91 /* GemTableCell */,
 				59C050372977FA380045D6ED /* CityCollectionCell */,
@@ -285,6 +302,7 @@
 			files = (
 				59C05024297701E10045D6ED /* LaunchScreen.storyboard in Resources */,
 				5999B0B7297BFACA0097F0D9 /* DrallCell.xib in Resources */,
+				5999B0BE297F217E0097F0D9 /* NewsCell.xib in Resources */,
 				59C05021297701E10045D6ED /* Assets.xcassets in Resources */,
 				59125A272979AB8900DDBD91 /* GemsCell.xib in Resources */,
 				59C0501F297701DF0045D6ED /* Main.storyboard in Resources */,
@@ -369,10 +387,12 @@
 				59C05018297701DF0045D6ED /* AppDelegate.swift in Sources */,
 				5999B0B6297BFACA0097F0D9 /* DrallCell.swift in Sources */,
 				59125A1E29793F2000DDBD91 /* ModelsProtocol.swift in Sources */,
+				5999B0BD297F217E0097F0D9 /* NewsCell.swift in Sources */,
 				59C0501A297701DF0045D6ED /* SceneDelegate.swift in Sources */,
 				5999B0AE2979C08A0097F0D9 /* DrallModel.swift in Sources */,
 				59C05033297711BD0045D6ED /* API.swift in Sources */,
 				59C0502F29770FE20045D6ED /* DepartmentModel.swift in Sources */,
+				5999B0B9297F20600097F0D9 /* NewsViewController.swift in Sources */,
 				59125A232979AAFB00DDBD91 /* GemViewController.swift in Sources */,
 				59C0503A2977FA5A0045D6ED /* CityCollectionViewCell.swift in Sources */,
 			);
