@@ -25,6 +25,7 @@ class MapViewController: UIViewController {
     var selectedCity: String = ""
     var typesOfDeps = TypeOfDepartment.allCases
     var isLoadingDeps: Bool = false
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +33,31 @@ class MapViewController: UIViewController {
         cityCollection.delegate = self
         typeCollection.dataSource = self
         typeCollection.delegate = self
-
-
         registerCells()
+        setupLocationManagerAndMapSetup()
         initMap()
         getATMS()
         getDepartments()
         typeCollection.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+    }
+    
+    private func setupLocationManagerAndMapSetup() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        mapView.isMyLocationEnabled = true
+    }
+    
+    private func drawCircle() {
+        guard let latitude = locationManager.location?.coordinate.latitude,
+              let longtitude = locationManager.location?.coordinate.longitude
+        else { return }
+        let position: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: latitude, longitude: longtitude)
+        let circle = GMSCircle(position: position, radius: 5000)
+        circle.fillColor = UIColor(red: 142/255, green: 193/255, blue: 237/255, alpha: 0.3)
+        circle.strokeWidth = 2.5
+        circle.strokeColor = UIColor(red: 39/255, green: 135/255, blue: 219/255, alpha: 0.8)
+        circle.map = mapView
     }
     
     private func registerCells() {
@@ -141,6 +160,16 @@ class MapViewController: UIViewController {
             filterAndDraw(selectedCity: selectedCity, array: arrayOfATMS, filteredArray: &filteredArrayOfATMS, colorOfPin: .green)
             filterAndDraw(selectedCity: selectedCity, array: arrayOfDepartments, filteredArray: &filteredArrayOfDepartments, colorOfPin: .systemYellow)
         }
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        drawCircle()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
 }
 
