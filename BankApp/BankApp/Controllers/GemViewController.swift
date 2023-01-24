@@ -43,12 +43,12 @@ class GemViewController: UIViewController {
     @IBAction func sortingButtonAction(_ sender: UIButton) {
         
         if isFilteredUp {
-            sender.setTitle("Asc", for: .normal)
+            sender.setTitle("Desc", for: .normal)
             gemsArray.sort {
                 $0.cost > $1.cost
             }
         } else {
-            sender.setTitle("Desc", for: .normal)
+            sender.setTitle("Asc", for: .normal)
             gemsArray.sort {
                 $0.cost < $1.cost
             }
