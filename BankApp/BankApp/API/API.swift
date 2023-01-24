@@ -14,6 +14,7 @@ enum Requests {
     case departments
     case gems
     case drall
+    case news
 }
 
 extension Requests: TargetType {
@@ -31,12 +32,14 @@ extension Requests: TargetType {
             return "getgems"
         case .drall:
             return "getinfodrall"
+        case .news:
+            return "news_info"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .atm, .departments, .gems, .drall:
+        case .atm, .departments, .gems, .drall, .news:
             return .get
         }
     }
@@ -55,6 +58,43 @@ extension Requests: TargetType {
             return .requestPlain
         case .drall:
             return .requestPlain
+        case .news:
+            guard let parameters = parameters else { return .requestPlain }
+            return .requestParameters(parameters: parameters, encoding: encoding)
+        }
+    }
+    
+    var encoding: ParameterEncoding {
+        switch self {
+        case .atm:
+            return URLEncoding.queryString
+        case .departments:
+            return URLEncoding.queryString
+        case .gems:
+            return URLEncoding.queryString
+        case .drall:
+            return URLEncoding.queryString
+        case .news:
+            return URLEncoding.queryString
+        }
+    }
+    
+    var parameters: [String:Any]? {
+        
+        var params = [String:Any]()
+        
+        switch self {
+        case .atm:
+            return nil
+        case .departments:
+            return nil
+        case .gems:
+            return nil
+        case .drall:
+            return nil
+        case .news:
+            params["lang"] = "ru"
+            return params
         }
     }
     
