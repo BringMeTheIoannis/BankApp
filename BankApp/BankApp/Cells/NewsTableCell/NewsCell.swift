@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewsCell: UITableViewCell {
     static var id = String(describing: NewsCell.self)
@@ -16,5 +17,9 @@ class NewsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+    }
+    
+    func set(imageURL: String) {
+        self.imageOutlet.sd_setImage(with: URL(string: imageURL))
     }
 }

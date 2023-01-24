@@ -85,18 +85,24 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-e2-TPT">
+                                <rect key="frame" x="197" y="418.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xmR-LG-JmF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XSK-gG-l3R" firstAttribute="top" secondItem="xmR-LG-JmF" secondAttribute="top" id="4a2-p5-lWc"/>
+                            <constraint firstItem="Z5X-e2-TPT" firstAttribute="centerX" secondItem="xmR-LG-JmF" secondAttribute="centerX" id="7KZ-7S-XQq"/>
                             <constraint firstItem="xmR-LG-JmF" firstAttribute="bottom" secondItem="XSK-gG-l3R" secondAttribute="bottom" id="JOt-1b-ecj"/>
                             <constraint firstItem="XSK-gG-l3R" firstAttribute="leading" secondItem="xmR-LG-JmF" secondAttribute="leading" id="UeF-kh-AwR"/>
                             <constraint firstItem="xmR-LG-JmF" firstAttribute="trailing" secondItem="XSK-gG-l3R" secondAttribute="trailing" id="cYt-mi-XUp"/>
+                            <constraint firstItem="Z5X-e2-TPT" firstAttribute="centerY" secondItem="xmR-LG-JmF" secondAttribute="centerY" id="uPP-XL-bth"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="Zuy-je-xSO"/>
                     <connections>
+                        <outlet property="spinner" destination="Z5X-e2-TPT" id="sV2-fh-8OE"/>
                         <outlet property="tableView" destination="XSK-gG-l3R" id="13u-Yf-dqa"/>
                     </connections>
                 </viewController>

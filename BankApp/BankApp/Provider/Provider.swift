@@ -72,4 +72,20 @@ class Provider {
             }
         }
     }
+    
+    func getNews(success: @escaping ([NewsModel]) -> Void, failure: (() -> Void)?) {
+        provider.request(.news) { result in
+            switch result {
+            case .success(let response):
+                guard let news = try? response.mapArray(NewsModel.self)
+                else {
+                    failure?()
+                    return
+                }
+                success(news)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

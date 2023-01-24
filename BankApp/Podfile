@@ -8,6 +8,7 @@ target 'BankApp' do
   # Pods for BankApp
 pod 'Moya'
 pod 'Moya-ObjectMapper'
-pod 'GoogleMaps' 
+pod 'GoogleMaps'
+pod 'SDWebImage'
 
 end
