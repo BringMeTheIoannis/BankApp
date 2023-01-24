@@ -161,12 +161,14 @@ extension MapViewController: UICollectionViewDataSource {
         if collectionView == cityCollection {
             guard let cell = cell as? CityCollectionViewCell else { return cell }
             cell.isSelected = selectedCityIndexPath == indexPath
+            cell.setup()
             cell.label.text = cities[indexPath.row]
             return cell
         }
         if collectionView == typeCollection {
             guard let cell = cell as? CityCollectionViewCell else { return cell}
             cell.isSelected = selectedTypeIndexPath == indexPath
+            cell.setup()
             cell.label.text = typesOfDeps[indexPath.row].rawValue
             if isLoadingDeps, typesOfDeps[indexPath.row] != .atm  {
                 cell.label.text = ""

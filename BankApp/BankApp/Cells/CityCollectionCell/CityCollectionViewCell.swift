@@ -16,10 +16,10 @@ class CityCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setup()
+        
     }
     
-    private func setup() {
+    func setup() {
         self.container.layer.cornerRadius = 15
         self.container.layer.borderWidth = 1.0
         self.container.layer.borderColor = UIColor.black.cgColor
