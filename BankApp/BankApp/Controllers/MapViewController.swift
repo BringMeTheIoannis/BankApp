@@ -13,6 +13,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var cityCollection: UICollectionView!
     @IBOutlet weak var typeCollection: UICollectionView!
     @IBOutlet weak var citiesSpinner: UIActivityIndicatorView!
+    @IBOutlet weak var mapSpinner: UIActivityIndicatorView!
     
     var arrayOfATMS = [Models]()
     var filteredArrayOfATMS = [Models]()
@@ -26,7 +27,9 @@ class MapViewController: UIViewController {
     var typesOfDeps = TypeOfDepartment.allCases
     var isLoadingDeps: Bool = false
     let locationManager = CLLocationManager()
-
+    var closeMarkers = [GMSMarker]()
+    var showNearby: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cityCollection.dataSource = self
@@ -48,6 +51,26 @@ class MapViewController: UIViewController {
         mapView.isMyLocationEnabled = true
     }
     
+    @IBAction func showNearbyButtonAction(_ sender: UIButton) {
+        DispatchQueue.main.async {
+            self.mapSpinner.startAnimating()
+            DispatchQueue.global().async {
+                self.showNearby.toggle()
+                DispatchQueue.main.async {
+                    if self.showNearby {
+                        sender.setTitle("Show all", for: .normal)
+                    } else {
+                        sender.setTitle("Show nearby", for: .normal)
+                    }
+                    self.drawMarkers(selectedType: self.selectedType, selectedCity: self.selectedCity)
+                    self.cityCollection.reloadData()
+                    self.typeCollection.reloadData()
+                    self.mapSpinner.stopAnimating()
+                }
+            }
+        }
+    }
+
     private func drawCircle() {
         guard let latitude = locationManager.location?.coordinate.latitude,
               let longtitude = locationManager.location?.coordinate.longitude
@@ -78,9 +101,9 @@ class MapViewController: UIViewController {
             self.arrayOfATMS = atms
             self.filteredArrayOfATMS = atms
             self.makeUniqueCitiesArray(array: atms)
-//            self.filteredArrayOfATMS.forEach { atm in
-//                self.drawMarker(lat: atm.gps_x, lon: atm.gps_y, color: .yellow)
-//            }
+            //            self.filteredArrayOfATMS.forEach { atm in
+            //                self.drawMarker(lat: atm.gps_x, lon: atm.gps_y, color: .yellow)
+            //            }
             self.drawMarkers(selectedType: self.selectedType, selectedCity: self.selectedCity)
             self.citiesSpinner.stopAnimating()
             self.cityCollection.reloadData()
@@ -98,9 +121,9 @@ class MapViewController: UIViewController {
             self.arrayOfDepartments = departments
             self.filteredArrayOfDepartments = departments
             self.makeUniqueCitiesArray(array: departments)
-//            departments.forEach { dep in
-//                self.drawMarker(lat: dep.gps_x, lon: dep.gps_y, color: .red)
-//            }
+            //            departments.forEach { dep in
+            //                self.drawMarker(lat: dep.gps_x, lon: dep.gps_y, color: .red)
+            //            }
             self.isLoadingDeps = false
             self.typeCollection.reloadData()
         } failure: {
@@ -143,14 +166,32 @@ class MapViewController: UIViewController {
     }
     
     func filterAndDraw(selectedCity: String, array: [Models], filteredArray: inout [Models], colorOfPin: UIColor) {
-        filteredArray = array.filter{ $0.city == selectedCity }
-        filteredArray.forEach { atmFilt in
-            drawMarker(lat: atmFilt.lat, lon: atmFilt.lon, color: colorOfPin)
+        if showNearby {
+            //            filteredArray = array.filter{ $0.city == selectedCity }
+            filteredArray = array.filter{ place in
+                guard let placeLat = Double(place.lat),
+                      let placeLon = Double(place.lon),
+                      let currentLat = locationManager.location?.coordinate.latitude,
+                      let currentLon = locationManager.location?.coordinate.longitude
+                else { return false}
+                let placePosition = CLLocation(latitude: placeLat, longitude: placeLon)
+                let currentPosition = CLLocation(latitude: currentLat, longitude: currentLon)
+                return placePosition.distance(from: currentPosition) <= 5000
+            }
+            filteredArray.forEach { atmFilt in
+                drawMarker(lat: atmFilt.lat, lon: atmFilt.lon, color: colorOfPin)
+            }
+        } else {
+            filteredArray = array.filter{ $0.city == selectedCity }
+            filteredArray.forEach { atmFilt in
+                drawMarker(lat: atmFilt.lat, lon: atmFilt.lon, color: colorOfPin)
+            }
         }
     }
     
     func drawMarkers(selectedType: TypeOfDepartment, selectedCity: String) {
         mapView.clear()
+        drawCircle()
         switch selectedType {
         case .atm:
             filterAndDraw(selectedCity: selectedCity, array: arrayOfATMS, filteredArray: &filteredArrayOfATMS, colorOfPin: .green)
