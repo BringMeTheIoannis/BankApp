@@ -193,12 +193,12 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="gLB-xJ-vjY">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells/>
                             </collectionView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="gLB-xJ-vjY">
-                                <rect key="frame" x="0.0" y="672" width="414" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaq-N4-bEg">
                                 <rect key="frame" x="0.0" y="742" width="414" height="71"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -220,16 +220,14 @@
                             <constraint firstItem="NYM-cy-f33" firstAttribute="centerX" secondItem="WqC-EQ-iRI" secondAttribute="centerX" id="488-Xb-EX2"/>
                             <constraint firstItem="vaq-N4-bEg" firstAttribute="top" secondItem="xHt-bU-DOF" secondAttribute="bottom" id="6TT-VA-rz1"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="vaq-N4-bEg" secondAttribute="trailing" id="8ro-d0-8pd"/>
-                            <constraint firstItem="vaq-N4-bEg" firstAttribute="top" secondItem="gLB-xJ-vjY" secondAttribute="bottom" id="AHI-bl-E1d"/>
                             <constraint firstItem="xHt-bU-DOF" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="IaC-fJ-NNs"/>
-                            <constraint firstItem="NYM-cy-f33" firstAttribute="centerY" secondItem="WqC-EQ-iRI" secondAttribute="centerY" id="LQS-qy-caw"/>
                             <constraint firstItem="WqC-EQ-iRI" firstAttribute="top" secondItem="9MS-GR-J4f" secondAttribute="top" id="OFO-WY-B3D"/>
                             <constraint firstItem="xHt-bU-DOF" firstAttribute="top" secondItem="74z-aJ-2et" secondAttribute="bottom" constant="5" id="WPv-FI-0hz"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="bottom" secondItem="vaq-N4-bEg" secondAttribute="bottom" id="WTi-bs-Ndq"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="xHt-bU-DOF" secondAttribute="trailing" id="YXA-oH-bmi"/>
                             <constraint firstItem="xHt-bU-DOF" firstAttribute="top" secondItem="WqC-EQ-iRI" secondAttribute="bottom" id="aqL-oj-ZYW"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="WqC-EQ-iRI" secondAttribute="trailing" id="f3G-5t-eMj"/>
-                            <constraint firstItem="gLB-xJ-vjY" firstAttribute="top" secondItem="WqC-EQ-iRI" secondAttribute="bottom" id="o8R-6I-5nj"/>
+                            <constraint firstItem="NYM-cy-f33" firstAttribute="centerY" secondItem="WqC-EQ-iRI" secondAttribute="centerY" id="vsF-7S-Se7"/>
                             <constraint firstItem="WqC-EQ-iRI" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="xSH-5I-uaz"/>
                             <constraint firstItem="sIh-XW-Da9" firstAttribute="trailing" secondItem="74z-aJ-2et" secondAttribute="trailing" constant="5" id="yCy-B7-rMC"/>
                             <constraint firstItem="vaq-N4-bEg" firstAttribute="leading" secondItem="sIh-XW-Da9" secondAttribute="leading" id="zuZ-jC-ya4"/>
