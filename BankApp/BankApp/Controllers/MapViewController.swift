@@ -167,13 +167,13 @@ class MapViewController: UIViewController {
     
     func filterAndDraw(selectedCity: String, array: [Models], filteredArray: inout [Models], colorOfPin: UIColor) {
         if showNearby {
-            //            filteredArray = array.filter{ $0.city == selectedCity }
+            guard let currentLat = locationManager.location?.coordinate.latitude,
+                  let currentLon = locationManager.location?.coordinate.longitude
+            else { return }
             filteredArray = array.filter{ place in
                 guard let placeLat = Double(place.lat),
-                      let placeLon = Double(place.lon),
-                      let currentLat = locationManager.location?.coordinate.latitude,
-                      let currentLon = locationManager.location?.coordinate.longitude
-                else { return false}
+                      let placeLon = Double(place.lon)
+                else { return false }
                 let placePosition = CLLocation(latitude: placeLat, longitude: placeLon)
                 let currentPosition = CLLocation(latitude: currentLat, longitude: currentLon)
                 return placePosition.distance(from: currentPosition) <= 5000
@@ -194,12 +194,12 @@ class MapViewController: UIViewController {
         drawCircle()
         switch selectedType {
         case .atm:
-            filterAndDraw(selectedCity: selectedCity, array: arrayOfATMS, filteredArray: &filteredArrayOfATMS, colorOfPin: .green)
+            self.filterAndDraw(selectedCity: selectedCity, array: self.arrayOfATMS, filteredArray: &self.filteredArrayOfATMS, colorOfPin: .green)
         case .dep:
-            filterAndDraw(selectedCity: selectedCity, array: arrayOfDepartments, filteredArray: &filteredArrayOfDepartments, colorOfPin: .systemYellow)
+            self.filterAndDraw(selectedCity: selectedCity, array: self.arrayOfDepartments, filteredArray: &self.filteredArrayOfDepartments, colorOfPin: .systemYellow)
         case .all:
-            filterAndDraw(selectedCity: selectedCity, array: arrayOfATMS, filteredArray: &filteredArrayOfATMS, colorOfPin: .green)
-            filterAndDraw(selectedCity: selectedCity, array: arrayOfDepartments, filteredArray: &filteredArrayOfDepartments, colorOfPin: .systemYellow)
+            self.filterAndDraw(selectedCity: selectedCity, array: self.arrayOfATMS, filteredArray: &self.filteredArrayOfATMS, colorOfPin: .green)
+            self.filterAndDraw(selectedCity: selectedCity, array: self.arrayOfDepartments, filteredArray: &self.filteredArrayOfDepartments, colorOfPin: .systemYellow)
         }
     }
 }
@@ -207,6 +207,7 @@ class MapViewController: UIViewController {
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         drawCircle()
+        locationManager.stopUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
