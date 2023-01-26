@@ -41,7 +41,7 @@ class MapViewController: UIViewController {
         initMap()
         getATMS()
         getDepartments()
-        typeCollection.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        setupTypeCollection()
     }
     
     private func setupLocationManagerAndMapSetup() {
@@ -49,6 +49,10 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         mapView.isMyLocationEnabled = true
+    }
+    
+    private func setupTypeCollection() {
+        typeCollection.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
     
     @IBAction func showNearbyButtonAction(_ sender: UIButton) {

@@ -10,5 +10,5 @@ pod 'Moya'
 pod 'Moya-ObjectMapper'
 pod 'GoogleMaps'
 pod 'SDWebImage'
-
+pod 'RealmSwift'
 end
