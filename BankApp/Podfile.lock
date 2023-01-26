@@ -15,6 +15,11 @@ PODS:
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
   - ObjectMapper (4.2.0)
+  - Realm (10.32.2):
+    - Realm/Headers (= 10.32.2)
+  - Realm/Headers (10.32.2)
+  - RealmSwift (10.32.2):
+    - Realm (= 10.32.2)
   - SDWebImage (5.15.0):
     - SDWebImage/Core (= 5.15.0)
   - SDWebImage/Core (5.15.0)
@@ -23,6 +28,7 @@ DEPENDENCIES:
   - GoogleMaps
   - Moya
   - Moya-ObjectMapper
+  - RealmSwift
   - SDWebImage
 
 SPEC REPOS:
@@ -32,6 +38,8 @@ SPEC REPOS:
     - Moya
     - Moya-ObjectMapper
     - ObjectMapper
+    - Realm
+    - RealmSwift
     - SDWebImage
 
 SPEC CHECKSUMS:
@@ -40,8 +48,10 @@ SPEC CHECKSUMS:
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Moya-ObjectMapper: 967a99d9ea3aa9c93ddbe112aeca3667f53bfe93
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  Realm: a11d133606e898ee43ddd3c24050a382c8d3eab1
+  RealmSwift: f796f7701a5efa031554d5639ef5b2d4c850bc74
   SDWebImage: 9bec4c5cdd9579e1f57104735ee0c37df274d593
 
-PODFILE CHECKSUM: f580e510e1e463f3b8dc37df1fce43876d744915
+PODFILE CHECKSUM: a6b93ad0ddae8ae2e557eebcb490a4064a37a6a0
 
 COCOAPODS: 1.11.3

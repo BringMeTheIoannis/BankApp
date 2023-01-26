@@ -22,6 +22,12 @@
 		5999B0BD297F217E0097F0D9 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0BB297F217E0097F0D9 /* NewsCell.swift */; };
 		5999B0BE297F217E0097F0D9 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B0BC297F217E0097F0D9 /* NewsCell.xib */; };
 		5999B0C0297F22E00097F0D9 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0BF297F22E00097F0D9 /* NewsModel.swift */; };
+		5999B0C229827A2D0097F0D9 /* LoggerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0C129827A2D0097F0D9 /* LoggerViewController.swift */; };
+		5999B0C429827CA50097F0D9 /* LoggerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0C329827CA50097F0D9 /* LoggerModel.swift */; };
+		5999B0C8298280320097F0D9 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0C7298280320097F0D9 /* RealmManager.swift */; };
+		5999B0CA298284170097F0D9 /* RequestTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0C9298284170097F0D9 /* RequestTypeEnum.swift */; };
+		5999B0CE29829B3C0097F0D9 /* LoggerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5999B0CC29829B3C0097F0D9 /* LoggerTableCell.swift */; };
+		5999B0CF29829B3C0097F0D9 /* LoggerTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5999B0CD29829B3C0097F0D9 /* LoggerTableCell.xib */; };
 		59C05018297701DF0045D6ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05017297701DF0045D6ED /* AppDelegate.swift */; };
 		59C0501A297701DF0045D6ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C05019297701DF0045D6ED /* SceneDelegate.swift */; };
 		59C0501C297701DF0045D6ED /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C0501B297701DF0045D6ED /* MapViewController.swift */; };
@@ -54,6 +60,12 @@
 		5999B0BB297F217E0097F0D9 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		5999B0BC297F217E0097F0D9 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		5999B0BF297F22E00097F0D9 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		5999B0C129827A2D0097F0D9 /* LoggerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerViewController.swift; sourceTree = "<group>"; };
+		5999B0C329827CA50097F0D9 /* LoggerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerModel.swift; sourceTree = "<group>"; };
+		5999B0C7298280320097F0D9 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		5999B0C9298284170097F0D9 /* RequestTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTypeEnum.swift; sourceTree = "<group>"; };
+		5999B0CC29829B3C0097F0D9 /* LoggerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTableCell.swift; sourceTree = "<group>"; };
+		5999B0CD29829B3C0097F0D9 /* LoggerTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoggerTableCell.xib; sourceTree = "<group>"; };
 		59C05014297701DF0045D6ED /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C05017297701DF0045D6ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C05019297701DF0045D6ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +109,7 @@
 			children = (
 				59125A172978341800DDBD91 /* TypeOfDepartmentEnum.swift */,
 				5999B0B1297BF40D0097F0D9 /* SegmentedControlEnum.swift */,
+				5999B0C9298284170097F0D9 /* RequestTypeEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -116,6 +129,7 @@
 				59125A222979AAFB00DDBD91 /* GemViewController.swift */,
 				5999B0AF297BECBD0097F0D9 /* DrallInfoViewController.swift */,
 				5999B0B8297F20600097F0D9 /* NewsViewController.swift */,
+				5999B0C129827A2D0097F0D9 /* LoggerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -147,6 +161,31 @@
 			path = NewsTableCell;
 			sourceTree = "<group>";
 		};
+		5999B0C5298280190097F0D9 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				5999B0C6298280220097F0D9 /* RealmManager */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		5999B0C6298280220097F0D9 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				5999B0C7298280320097F0D9 /* RealmManager.swift */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
+		5999B0CB29829B180097F0D9 /* LoggerTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				5999B0CC29829B3C0097F0D9 /* LoggerTableCell.swift */,
+				5999B0CD29829B3C0097F0D9 /* LoggerTableCell.xib */,
+			);
+			path = LoggerTableCell;
+			sourceTree = "<group>";
+		};
 		59C0500B297701DF0045D6ED = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +207,7 @@
 		59C05016297701DF0045D6ED /* BankApp */ = {
 			isa = PBXGroup;
 			children = (
+				5999B0C5298280190097F0D9 /* Database */,
 				59125A212979AAE300DDBD91 /* Controllers */,
 				59125A1C29793F1200DDBD91 /* Protocol */,
 				59125A16297833F800DDBD91 /* Enums */,
@@ -193,6 +233,7 @@
 				59125A1F2979A47100DDBD91 /* GemModel.swift */,
 				5999B0AD2979C08A0097F0D9 /* DrallModel.swift */,
 				5999B0BF297F22E00097F0D9 /* NewsModel.swift */,
+				5999B0C329827CA50097F0D9 /* LoggerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +257,7 @@
 		59C050362977FA310045D6ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5999B0CB29829B180097F0D9 /* LoggerTableCell */,
 				5999B0BA297F215C0097F0D9 /* NewsTableCell */,
 				5999B0B3297BFAA60097F0D9 /* DrallTableCell */,
 				59125A282979AB9400DDBD91 /* GemTableCell */,
@@ -307,6 +349,7 @@
 				5999B0B7297BFACA0097F0D9 /* DrallCell.xib in Resources */,
 				5999B0BE297F217E0097F0D9 /* NewsCell.xib in Resources */,
 				59C05021297701E10045D6ED /* Assets.xcassets in Resources */,
+				5999B0CF29829B3C0097F0D9 /* LoggerTableCell.xib in Resources */,
 				59125A272979AB8900DDBD91 /* GemsCell.xib in Resources */,
 				59C0501F297701DF0045D6ED /* Main.storyboard in Resources */,
 				59C0503B2977FA5A0045D6ED /* CityCollectionViewCell.xib in Resources */,
@@ -379,16 +422,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5999B0CA298284170097F0D9 /* RequestTypeEnum.swift in Sources */,
 				5999B0B0297BECBD0097F0D9 /* DrallInfoViewController.swift in Sources */,
 				59125A202979A47100DDBD91 /* GemModel.swift in Sources */,
 				59125A182978341800DDBD91 /* TypeOfDepartmentEnum.swift in Sources */,
+				5999B0C429827CA50097F0D9 /* LoggerModel.swift in Sources */,
 				59125A262979AB8900DDBD91 /* GemsCell.swift in Sources */,
+				5999B0CE29829B3C0097F0D9 /* LoggerTableCell.swift in Sources */,
+				5999B0C8298280320097F0D9 /* RealmManager.swift in Sources */,
 				5999B0C0297F22E00097F0D9 /* NewsModel.swift in Sources */,
 				59C0502D29770F970045D6ED /* ATMModel.swift in Sources */,
 				59C0501C297701DF0045D6ED /* MapViewController.swift in Sources */,
 				59C05035297713280045D6ED /* Provider.swift in Sources */,
 				5999B0B2297BF40D0097F0D9 /* SegmentedControlEnum.swift in Sources */,
 				59C05018297701DF0045D6ED /* AppDelegate.swift in Sources */,
+				5999B0C229827A2D0097F0D9 /* LoggerViewController.swift in Sources */,
 				5999B0B6297BFACA0097F0D9 /* DrallCell.swift in Sources */,
 				59125A1E29793F2000DDBD91 /* ModelsProtocol.swift in Sources */,
 				5999B0BD297F217E0097F0D9 /* NewsCell.swift in Sources */,

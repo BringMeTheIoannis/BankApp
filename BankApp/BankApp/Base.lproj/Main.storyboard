@@ -8,17 +8,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--Logger-->
         <scene sceneID="f3f-fS-wh7">
             <objects>
-                <viewController id="9rD-sX-vpE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoggerViewController" id="9rD-sX-vpE" customClass="LoggerViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wJn-FN-qCz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K5J-X3-EzX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WOX-pV-ceo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WOX-pV-ceo" firstAttribute="trailing" secondItem="K5J-X3-EzX" secondAttribute="trailing" id="C3i-zp-i5e"/>
+                            <constraint firstItem="WOX-pV-ceo" firstAttribute="bottom" secondItem="K5J-X3-EzX" secondAttribute="bottom" id="NQF-Ir-4cY"/>
+                            <constraint firstItem="K5J-X3-EzX" firstAttribute="top" secondItem="WOX-pV-ceo" secondAttribute="top" id="Zce-8f-k9E"/>
+                            <constraint firstItem="K5J-X3-EzX" firstAttribute="leading" secondItem="WOX-pV-ceo" secondAttribute="leading" id="fqi-aj-N2O"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="QP5-o0-tVy"/>
+                    <tabBarItem key="tabBarItem" title="Logger" image="macpro.gen2" catalog="system" id="QP5-o0-tVy"/>
+                    <connections>
+                        <outlet property="tableView" destination="K5J-X3-EzX" id="Z3U-Bh-8gL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzq-3l-LyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -271,9 +286,9 @@
     <resources>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
         <image name="banknote" catalog="system" width="128" height="78"/>
+        <image name="macpro.gen2" catalog="system" width="96" height="128"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="suit.diamond.fill" catalog="system" width="107" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
