@@ -10,6 +10,7 @@ import UIKit
 class LoggerViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var realm = RealmManager<Logger>()
     var loggedData = [Logger]()
@@ -26,8 +27,10 @@ class LoggerViewController: UIViewController {
     }
     
     private func setupTable() {
+        spinner.startAnimating()
         tableView.delegate = self
         tableView.dataSource = self
+        spinner.stopAnimating()
     }
     
     private func registerCells() {

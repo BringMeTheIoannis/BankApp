@@ -20,6 +20,9 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="eVx-xd-oGc">
+                                <rect key="frame" x="197" y="418.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WOX-pV-ceo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -28,10 +31,13 @@
                             <constraint firstItem="WOX-pV-ceo" firstAttribute="bottom" secondItem="K5J-X3-EzX" secondAttribute="bottom" id="NQF-Ir-4cY"/>
                             <constraint firstItem="K5J-X3-EzX" firstAttribute="top" secondItem="WOX-pV-ceo" secondAttribute="top" id="Zce-8f-k9E"/>
                             <constraint firstItem="K5J-X3-EzX" firstAttribute="leading" secondItem="WOX-pV-ceo" secondAttribute="leading" id="fqi-aj-N2O"/>
+                            <constraint firstItem="eVx-xd-oGc" firstAttribute="centerY" secondItem="K5J-X3-EzX" secondAttribute="centerY" id="oYQ-xV-Con"/>
+                            <constraint firstItem="eVx-xd-oGc" firstAttribute="centerX" secondItem="K5J-X3-EzX" secondAttribute="centerX" id="ygO-G3-Yrc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Logger" image="macpro.gen2" catalog="system" id="QP5-o0-tVy"/>
                     <connections>
+                        <outlet property="spinner" destination="eVx-xd-oGc" id="Srn-U0-OGg"/>
                         <outlet property="tableView" destination="K5J-X3-EzX" id="Z3U-Bh-8gL"/>
                     </connections>
                 </viewController>
