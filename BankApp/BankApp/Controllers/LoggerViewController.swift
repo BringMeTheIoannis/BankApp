@@ -62,7 +62,7 @@ extension LoggerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LoggerTableCell.id, for: indexPath)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.mm.yyyy, HH:mm:ss"
+        dateFormatter.dateFormat = "dd.MM.yyyy, HH:mm:ss"
         guard let cell = cell as? LoggerTableCell else { return cell}
         cell.queryLabel.text = "Request name: \(loggedData[indexPath.row].requestName)"
         cell.dateLabel.text = "DateTime: \(dateFormatter.string(from: loggedData[indexPath.row].requestTime))"
